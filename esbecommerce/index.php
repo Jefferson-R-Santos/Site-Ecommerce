@@ -29,16 +29,26 @@ $resultado_disponiveis-> execute();
 while($row_disponiveis = $resultado_disponiveis-> fetch(PDO::FETCH_ASSOC)){
 
     extract($row_disponiveis);
-echo "<img src= './imagens/$imagem'><br>";
+/*echo "<img src= './imagens/$imagem'><br>";
 echo "ID: $id <br>";
 echo "Nome: $nome <br>";
 echo "Preço: R$". number_format($preço, 2, ",", "."). "<br>";
-echo "<hr>";
-echo "";
+echo "<hr>";*/
+} ?> <div class="col mb-4 text-center">
+<div class="card">
+    <img src='<?php echo "./imagens/$imagem"; ?>' class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title"><?php echo $name; ?></h5>
+        <p class="card-text">R$ <?php echo number_format($price, 2, ",", "."); ?></p>
+        <a href="view-products.php?id=<?php echo $id; ?>" class="btn btn-primary">Detalhes</a>
+    </div>
+</div>
+</div>
+<?php
 
-}
 
 ?>
+
 </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
