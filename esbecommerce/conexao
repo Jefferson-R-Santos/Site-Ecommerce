@@ -10,7 +10,7 @@ try {
 echo "conexão realizada com sucesso <br>";
 } catch (exception ) {
 
-echo "falha de conexão <br>";
+echo "falha <br>";
 
 }
 
