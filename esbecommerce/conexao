@@ -5,7 +5,7 @@ $usuario = "root" ;
 $senha = "" ;
 $dbname = "produtos" ;
 try {
-    $conn =  new PDO ("mysqli= host=$servidor;;dbname=". $dbname, $usuario, $senha);
+    $conn =  new PDO (mysqli_connect($servidor, $usuario, $senha, $dbname));
 echo "conexão realizada com sucesso <br>";
 } catch (exception ) {
 
