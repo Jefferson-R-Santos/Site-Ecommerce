@@ -4,9 +4,10 @@ $servidor = "localhost";
 $usuario = "root" ;
 $senha = "" ;
 $dbname = "produtos" ;
+$port = 3306;
 try {
-    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-//echo "conexão realizada com sucesso <br>";
+    $conn =  new PDO ("mysql:host= $servidor; port= $port; dbname=".$dbname, $usuario, $senha);
+echo "conexão realizada com sucesso <br>";
 } catch (exception ) {
 
 //echo "falha de conexão <br>";

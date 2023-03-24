@@ -19,16 +19,6 @@ $query_disponiveis = "SELECT id, nome, descrição, preço FROM disponiveis ORDE
 $resultado_disponiveis = $conn -> prepare($query_disponiveis);
 $resultado_disponiveis-> execute();
 
-
-                while ($row_product = $result_products->fetch(PDO::FETCH_ASSOC)) {
-                    extract($row_product);
-                    /* echo "<img src='./images/$id/$image'><br>";
-                      echo "ID: $id<br>";
-                      echo "Nome: $name<br>";
-                      echo "Preço: R$ " . number_format($price, 2, ",", ".") . "<br>";
-                      echo "<hr>"; */  }
-
-
 ?>
 </body>
 </html>
