@@ -6,11 +6,11 @@ $senha = "" ;
 $dbname = "produtos" ;
 try {
     $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-echo "conexão realizada com sucesso <br>";
+//echo "conexão realizada com sucesso <br>";
 } catch (exception ) {
 
-echo "falha de conexão <br>";
-
+//echo "falha de conexão <br>";
+die("Erro: Por Favor tente novamente caso o erro persista, entre em contato com seu Admnistrador: (Coloque seu Email aqui)<br>");
 }
 
 ?>
