@@ -1,16 +1,18 @@
-<?php 
+<?php
 
-$servidor = "localhost";
-$usuario = "root" ;
-$senha = "" ;
-$dbname = "produtos" ;
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "produtos";
+$port = 3306;
+
 try {
-    $conn =  new PDO (mysqli_connect($servidor, $usuario, $senha, $dbname));
-echo "conexão realizada com sucesso <br>";
-} catch (exception ) {
-
-echo "falha/erro <br>";
-
+    $conn = new PDO("mysql:host=$host;port=$port;dbname=" . $dbname, $user, $pass);
+    //echo "Conexão com banco de dados realizado com sucesso!<br>";
+} catch (Exception $ex) {
+    //echo "Erro: Conexão com banco de dados não realizada com sucesso.<br>";
+    die("Erro: Por favor tente novamente. Caso o problema persista, entre em contato o administrador: <br>");
 }
+
 
 ?>
