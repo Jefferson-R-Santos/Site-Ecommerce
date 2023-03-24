@@ -19,15 +19,15 @@ $query_disponiveis = "SELECT id, nome, descrição, preço FROM disponiveis ORDE
 $resultado_disponiveis = $conn -> prepare($query_disponiveis);
 $resultado_disponiveis-> execute();
 
-while ($linha_disponiveis = $resultado_disponiveis-> fetch(PDO::FETCH_ASSOC)) {
 
-    echo "ID: ". $linha_disponiveis['id'].  "<br>";
-    echo "NOME: ". $linha_disponiveis['nome'].  "<br>";
-    echo "DESCRIÇÃO: ". $linha_disponiveis['descrição'].  "<br>";
-    echo "PREÇO: ". $linha_disponiveis['preço'].  "<br>";
-    echo "<hr>";
+                while ($row_product = $result_products->fetch(PDO::FETCH_ASSOC)) {
+                    extract($row_product);
+                    /* echo "<img src='./images/$id/$image'><br>";
+                      echo "ID: $id<br>";
+                      echo "Nome: $name<br>";
+                      echo "Preço: R$ " . number_format($price, 2, ",", ".") . "<br>";
+                      echo "<hr>"; */  }
 
-};
 
 ?>
 </body>
