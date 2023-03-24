@@ -10,8 +10,8 @@ try {
 echo "conexão realizada com sucesso <br>";
 } catch (exception ) {
 
-//echo "falha de conexão <br>";
-die("Erro: Por Favor tente novamente caso o erro persista, entre em contato com seu Admnistrador: (Coloque seu Email aqui)<br>");
+echo "falha de conexão <br>";
+
 }
 
 ?>
