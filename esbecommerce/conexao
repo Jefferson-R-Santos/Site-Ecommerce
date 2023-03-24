@@ -6,10 +6,10 @@ $senha = "" ;
 $dbname = "produtos" ;
 try {
     $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-echo "conexão realizada com sucesso";
+echo "conexão realizada com sucesso <br>";
 } catch (exception ) {
 
-echo "falha de conexão";
+echo "falha de conexão <br>";
 
 }
 
