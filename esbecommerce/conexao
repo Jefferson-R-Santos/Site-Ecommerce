@@ -1,0 +1,16 @@
+<?php 
+
+$servidor = "localhost";
+$usuario = "root" ;
+$senha = "" ;
+$dbname = "produtos" ;
+try {
+    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+echo "conexão realizada com sucesso";
+} catch (exception ) {
+
+echo "falha de conexão";
+
+}
+
+?>
