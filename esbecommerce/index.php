@@ -25,7 +25,7 @@ $query_disponiveis = "SELECT id, nome, descrição, preço, imagem FROM disponiv
 $resultado_disponiveis = $conn -> prepare($query_disponiveis);
 $resultado_disponiveis-> execute();
 ?>
-<div class="row row-cols-1 row-cols-md-3">
+<div class="row row-cols-1 row-cols-md-3"> 
 <?php
 while($row_disponiveis = $resultado_disponiveis-> fetch(PDO::FETCH_ASSOC)){
 
@@ -35,20 +35,22 @@ echo "ID: $id <br>";
 echo "Nome: $nome <br>";
 echo "Preço: R$". number_format($preço, 2, ",", "."). "<br>";
 echo "<hr>";*/
-} ?> <div class="col mb-4 text-center">
-<div class="card">
-<img src='<?php echo "./imagens/disponiveis/$id/$imagem"; ?>' class="card-img-top">
-    <div class="card-body">
-    <h5 class="card-title"><?php echo $nome; ?></h5>
-    <p class ="card-text">R$ <?php echo number_format($preço, 2, ",", "."). "<br>" ?> </p> 
-    <a href= "#" class = "btn btn-primary">Detalhes</a>
-    </div>
-</div>
-</div>
-<?php
-
-
-?>
+} ?>
+<div class="col mb-4 text-center">
+                        <div class="card">
+                            <img src='<?php echo "./imagens/disponiveis/$id/$image"; ?>' class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $nome; ?></h5>
+                                <p class="card-text">R$ <?php echo number_format($preço, 2, ",", "."); ?></p>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                
+                ?>
+            </div>
+        </div>
 
 </div>
 </div>
