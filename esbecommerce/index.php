@@ -9,6 +9,7 @@ include_once ('conexao');
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="imagens/icon/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<title>Esborço de site Ecommerce</title>
 
@@ -36,7 +37,7 @@ echo "Preço: R$". number_format($preço, 2, ",", "."). "<br>";
 echo "<hr>";*/
 } ?> <div class="col mb-4 text-center">
 <div class="card">
-<img src='<?php echo "./imagens/$id/$imagem"; ?>' class="card-img-top">
+<img src='<?php echo "./imagens/disponiveis/$id/$imagem"; ?>' class="card-img-top">
     <div class="card-body">
     <h5 class="card-title"><?php echo $nome; ?></h5>
     <p class ="card-text">R$ <?php echo number_format($preço, 2, ",", "."). "<br>" ?> </p> 
