@@ -36,7 +36,7 @@ echo "Preço: R$". number_format($preço, 2, ",", "."). "<br>";
 echo "<hr>";*/
 } ?> <div class="col mb-4 text-center">
 <div class="card">
-<img src='<?php echo './imagens/$imagem'; ?>' class="card-img-top">
+<img src='<?php echo "./imagens/$id/$imagem"; ?>' class="card-img-top">
     <div class="card-body">
     <h5 class="card-title"><?php echo $nome; ?></h5>
     <p class ="card-text">R$ <?php echo number_format($preço, 2, ",", "."). "<br>" ?> </p> 
