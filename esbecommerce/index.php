@@ -39,6 +39,7 @@ echo "<hr>";*/
     <img src='<?php echo "./imagens/$imagem"; ?>' class="card-img-top" alt="...">
     <div class="card-body">
     <h5 class="card-title"><?php echo $nome; ?></h5>
+    <p class ="card-text">R$ <?php echo number_format($preço, 2, ",", "."). "<br>" ?> </p> 
     </div>
 </div>
 </div>
