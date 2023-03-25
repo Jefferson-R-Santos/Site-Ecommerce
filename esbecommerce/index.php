@@ -38,6 +38,7 @@ echo "<hr>";*/
 <div class="card">
     <img src='<?php echo "./imagens/$imagem"; ?>' class="card-img-top" alt="...">
     <div class="card-body">
+    <h5 class="card-title"><?php echo $nome; ?></h5>
     </div>
 </div>
 </div>
