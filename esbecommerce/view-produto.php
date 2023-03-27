@@ -18,10 +18,20 @@ include_once 'conexao';
         $result_disponiveis->bindParam(':id', $id, PDO::PARAM_INT);
         $result_disponiveis->execute();
         $row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC);
-        var_dump($row_disponiveis);
+        extract($row_disponiveis);
         ?>
         <div class="container">
-            
+            <h1 class= "display-4 mt-5 mb-5"> <?php echo $nome; ?> </h1>
+        <div class= "row">
+
+            <div class = "col-md-6">
+             <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>'>
+            </div>
+            <div class = "col-md-6">
+
+            </div>
+
+        </div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
