@@ -6,7 +6,7 @@ include_once 'conexao';
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="shortcut icon" href="images/icon/favicon.ico" >
+        <link rel="shortcut icon" href="imagens/icon/favicon.ico" >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <title>Site Ecommerce</title>
     </head>
@@ -37,7 +37,7 @@ include_once 'conexao';
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $nome; ?></h5>
                                 <p class="card-text">R$ <?php echo number_format($preço, 2, ",", "."); ?></p>
-                                <a href="view-products.php?id=<?php echo $id; ?>" class="btn btn-primary">Detalhes</a>
+                                <a href="view-produto.php?id=<?php echo $id; ?>" class="btn btn-primary">Detalhes</a>
                             </div>
                         </div>
                     </div>
