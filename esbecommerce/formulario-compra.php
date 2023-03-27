@@ -80,11 +80,11 @@ include_once 'conexao';
         <input type="email" name= "email" id= "email" class= "form-control" placeholder="Insira seu melhor email" required>  
 
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
+        
 
         <button type= "submit" class="btn btn-outline-success">Enviar</button>
         
-    </div>
+
       </form>
       </div>
     </div>
