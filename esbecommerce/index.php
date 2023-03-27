@@ -29,12 +29,12 @@ $resultado_disponiveis-> execute();
 <?php
 while($row_disponiveis = $resultado_disponiveis-> fetch(PDO::FETCH_ASSOC)){
 
-    extract($row_disponiveis);
-/*echo "<img src= './imagens/$imagem'><br>";
+    
+echo "<img src= './imagens/$imagem'><br>";
 echo "ID: $id <br>";
 echo "Nome: $nome <br>";
 echo "Preço: R$". number_format($preço, 2, ",", "."). "<br>";
-echo "<hr>";*/
+echo "<hr>";
 } ?>
 <div class="col mb-4 text-center">
                         <div class="card">
