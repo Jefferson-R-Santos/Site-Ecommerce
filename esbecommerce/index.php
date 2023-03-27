@@ -8,7 +8,7 @@ include_once 'conexao';
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="shortcut icon" href="images/icon/favicon.ico" >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <title>Celke</title>
+        <title>Site Ecommerce</title>
     </head>
     <body>
         <?php
@@ -17,13 +17,13 @@ include_once 'conexao';
         <div class="container">
             <h2 class="display-4 mt-5 mb-5">Produtos Disponiveis</h2>
             <?php
-            $query_products = "SELECT id, nome, preco, imagem FROM products ORDER BY id ASC";
-            $result_products = $conn->prepare($query_products);
-            $result_products->execute();
+            $query_products = "SELECT id, nome, preco, imagem FROM disponiveis ORDER BY id ASC";
+            $result_disponiveis = $conn->prepare($query_products);
+            $result_disponiveis->execute();
             ?>
             <div class="row row-cols-1 row-cols-md-3">
                 <?php
-                while ($row_product = $result_products->fetch(PDO::FETCH_ASSOC)) {
+                while ($row_product = $result_disponiveis->fetch(PDO::FETCH_ASSOC)) {
                     extract($row_product);
                     /* echo "<img src='./images/$id/$image'><br>";
                       echo "ID: $id<br>";
@@ -33,7 +33,7 @@ include_once 'conexao';
                     ?>
                     <div class="col mb-4 text-center">
                         <div class="card">
-                            <img src='<?php echo "./images/products/$id/$image"; ?>' class="card-img-top" alt="...">
+                            <img src='<?php echo "./imagens/products/$id/$image"; ?>' class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $name; ?></h5>
                                 <p class="card-text">R$ <?php echo number_format($price, 2, ",", "."); ?></p>
