@@ -22,7 +22,7 @@ include_once 'conexao';
         ?>
     <div class = "container">
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="imagens" alt="" width="72" height="72">
+                <img class="d-block mx-auto mb-4" src="imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
                 <h2>Formulário de Pagamento</h2>
                 <p class="lead">Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
     </div>
