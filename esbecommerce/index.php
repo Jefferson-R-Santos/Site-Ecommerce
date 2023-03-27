@@ -1,5 +1,5 @@
 <?php
-include_once './conexao.php';
+include_once 'conexao';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,12 +12,12 @@ include_once './conexao.php';
     </head>
     <body>
         <?php
-        include_once './menu.php';
+       
         ?>
         <div class="container">
             <h2 class="display-4 mt-5 mb-5">Produtos Disponiveis</h2>
             <?php
-            $query_products = "SELECT id, name, price, image FROM products ORDER BY id ASC";
+            $query_products = "SELECT id, nome, preco, imagem FROM products ORDER BY id ASC";
             $result_products = $conn->prepare($query_products);
             $result_products->execute();
             ?>
