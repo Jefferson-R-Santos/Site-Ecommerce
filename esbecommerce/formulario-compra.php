@@ -38,7 +38,7 @@ include_once 'conexao';
 
     <hr>
 
-    <div class = "row">
+    <div class = "row mb-5">
 <div class = "col-md-12"> 
     <h4 class = "mb-3"> Informações Pessoais</h4>
       
@@ -78,6 +78,9 @@ include_once 'conexao';
         <input type="email" name= "email" id= "email" class= "form-control" placeholder="Insira seu melhor email" required>  
 
         </div>
+
+        <button type= "submit" class="btn btn-outline-success">Enviar</button>
+
       </form>
       </div>
     </div>
