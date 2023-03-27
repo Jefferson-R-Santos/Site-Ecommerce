@@ -29,13 +29,13 @@ $resultado_disponiveis-> execute();
 <?php
 while($row_disponiveis = $resultado_disponiveis-> fetch(PDO::FETCH_ASSOC)){
 
-    
-echo "<img src= './imagens/$imagem'><br>";
+    extract($row_disponiveis); 
+/*echo "<img src= './imagens/$imagem'><br>";
 echo "ID: $id <br>";
 echo "Nome: $nome <br>";
 echo "Preço: R$". number_format($preço, 2, ",", "."). "<br>";
 echo "<hr>";
-} ?>
+*/} ?>
 <div class="col mb-4 text-center">
                         <div class="card">
                             <img src='<?php echo "./imagens/disponiveis/$id/$image" ?>' class="card-img-top" alt="...">
