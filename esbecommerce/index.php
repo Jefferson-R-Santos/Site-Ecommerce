@@ -17,14 +17,14 @@ include_once 'conexao';
         <div class="container">
             <h2 class="display-4 mt-5 mb-5">Produtos Disponiveis</h2>
             <?php
-            $query_products = "SELECT id, nome, preco, imagem FROM disponiveis ORDER BY id ASC";
+            $query_products = "SELECT id, nome, preço, imagem FROM disponiveis ORDER BY id ASC";
             $result_disponiveis = $conn->prepare($query_products);
             $result_disponiveis->execute();
             ?>
             <div class="row row-cols-1 row-cols-md-3">
                 <?php
-                while ($row_product = $result_disponiveis->fetch(PDO::FETCH_ASSOC)) {
-                    extract($row_product);
+                while ($row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC)) {
+                    extract($row_disponiveis);
                     /* echo "<img src='./images/$id/$image'><br>";
                       echo "ID: $id<br>";
                       echo "Nome: $name<br>";
@@ -33,10 +33,10 @@ include_once 'conexao';
                     ?>
                     <div class="col mb-4 text-center">
                         <div class="card">
-                            <img src='<?php echo "./imagens/products/$id/$image"; ?>' class="card-img-top" alt="...">
+                            <img src='<?php echo "./imagens/disponiveis/$id/$imagem"; ?>' class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $name; ?></h5>
-                                <p class="card-text">R$ <?php echo number_format($price, 2, ",", "."); ?></p>
+                                <p class="card-text">R$ <?php echo number_format($preco, 2, ",", "."); ?></p>
                                 <a href="view-products.php?id=<?php echo $id; ?>" class="btn btn-primary">Detalhes</a>
                             </div>
                         </div>
