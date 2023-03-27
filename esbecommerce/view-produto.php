@@ -34,7 +34,7 @@ include_once 'conexao';
             <div class = "col-md-6">
             <p>De R$ <?php echo number_format($preçoSD, 2, ",", ".");?></p>
             <p>Por R$ <?php echo number_format($preço, 2, ",", ".");?> </p>
-            <p><a href ="formulario-compra.php?id=<?php echo $id ; ?>" class = "btn- btn-primary">Comprar</a></p>
+            <p><a href ="formulario-compra.php?id=<?php echo $id ; ?>" class = "btn btn-outline-success">Comprar</a></p>
             </div>
         </div>
         <div class = "row">
