@@ -33,10 +33,10 @@ include_once 'conexao';
                     ?>
                     <div class="col mb-4 text-center">
                         <div class="card">
-                            <img src='<?php echo "./imagens/disponiveis/$id/$imagem"; ?>' class="card-img-top" alt="...">
+                            <img src='<?php echo "imagens/disponiveis/$id/$imagem"; ?>' class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $name; ?></h5>
-                                <p class="card-text">R$ <?php echo number_format($preco, 2, ",", "."); ?></p>
+                                <p class="card-text">R$ <?php echo number_format($preço, 2, ",", "."); ?></p>
                                 <a href="view-products.php?id=<?php echo $id; ?>" class="btn btn-primary">Detalhes</a>
                             </div>
                         </div>
