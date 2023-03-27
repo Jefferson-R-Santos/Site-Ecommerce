@@ -25,8 +25,57 @@ include_once 'conexao';
                 <img class="d-block mx-auto mb-4" src="imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
                 <h2>Formulário de Pagamento</h2>
                 <p class="lead">Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+
     </div>
+    <div class = "row mb-5">
+        <div class = "col-md-8">
+<h3> <?php echo $nome ; ?> </h3>
+        </div>
+        <div class = "col-md-4">
+         <div class= "mb-1"> <?php echo number_format($oreço, 2, ",", "."); ?> </div>
+        </div>
     </div>
+
+    <hr>
+
+    <div class = "row">
+<div class = "col-md-12"> 
+    <h4 class = "mb-3"> Informações Pessoais</h4>
+      
+      <form>
+        <div class ="form-row">
+       <div class = "form-group col-md-6">
+       
+       <label for="Pnome">Primeiro Nome</label>
+       <input type="text" name= "Pnome" id= "Pnome" class= "form-control" placeholder="Primeiro Nome" autofocus required>
+
+       </div>
+       <div class = "col-md-6">
+
+       <label for="Snome">Sobrenome</label>
+       <input type="text" name= "Snome" id= "Snome" class= "form-control" placeholder="Sobrenome" required>  
+    
+    </div>
+        </div>
+
+        <div class ="form-row">
+       <div class = "form-group col-md-6">
+       
+       <label for="Pnome">CPF</label>
+       <input type="text" name= "cpf" id= "cpf" class= "form-control" placeholder="Somente os numeros do CPF" required>
+
+       </div>
+       <div class = "col-md-6">
+
+       <label for="Snome">Telefone</label>
+       <input type="text" name= "cell" id= "cell" class= "form-control" placeholder="Numero de telefone/celular com DDD" required>  
+    
+    </div>
+        </div>
+      </form>
+      </div>
+    </div>
+</div>
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
