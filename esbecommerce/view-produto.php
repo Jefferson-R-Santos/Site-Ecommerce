@@ -19,16 +19,18 @@ include_once 'conexao';
         $result_disponiveis->execute();
         $row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC);
         extract($row_disponiveis);
+        $preçoSD = ($preço * 0.50) + $preço ; 
         ?>
         <div class="container">
             <h1 class= "display-4 mt-5 mb-5"> <?php echo $nome; ?> </h1>
         <div class= "row">
 
             <div class = "col-md-6">
-             <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>'>
+             <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>' class= "card-img-top">
             </div>
             <div class = "col-md-6">
-
+            <p>De R$ <?php echo number_format($preçoSD, 2, ",", ".");?></p>
+            <p>Por R$ <?php echo number_format($preço, 2, ",", ".");?> </p>
             </div>
 
         </div>
