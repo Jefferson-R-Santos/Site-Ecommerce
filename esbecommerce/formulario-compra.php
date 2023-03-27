@@ -12,6 +12,8 @@ include_once 'conexao';
         <title>Vizualizar Produto Disponivel</title>
     </head>
     <body>
+<?php include_once 'menu.php'; ?>
+
     <?php
         $query_products = "SELECT id, nome, preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
         $result_disponiveis = $conn->prepare($query_products);
