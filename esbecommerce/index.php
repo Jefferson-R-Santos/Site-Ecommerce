@@ -35,7 +35,7 @@ include_once 'conexao';
                         <div class="card">
                             <img src='<?php echo "imagens/disponiveis/$id/$imagem"; ?>' class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $name; ?></h5>
+                                <h5 class="card-title"><?php echo $nome; ?></h5>
                                 <p class="card-text">R$ <?php echo number_format($preço, 2, ",", "."); ?></p>
                                 <a href="view-products.php?id=<?php echo $id; ?>" class="btn btn-primary">Detalhes</a>
                             </div>
