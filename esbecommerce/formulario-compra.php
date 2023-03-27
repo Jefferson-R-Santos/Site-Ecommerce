@@ -68,7 +68,7 @@ include_once 'conexao';
        <div class = "col-md-6">
 
        <label for="cell">Telefone</label>
-       <input type="text" name= "cell" id= "cell" class= "form-control" placeholder="Numero de telefone/celular com DDD" maxlength="14" oninput="maskCPF(this)" required>  
+       <input type="text" name= "cell" id= "cell" class= "form-control" placeholder="Numero de telefone/celular com DDD" maxlength="14" oninput="maskCell(this)" required>  
     
     </div>
         </div>
