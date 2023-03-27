@@ -62,13 +62,13 @@ include_once 'conexao';
        <div class = "form-group col-md-6">
        
        <label for="cpf">CPF</label>
-       <input type="text" name= "cpf" id= "cpf" class= "form-control" placeholder="Somente os numeros do CPF" required>
+       <input type="text" name= "cpf" id= "cpf" class= "form-control" placeholder="Somente os numeros do CPF" maxlength="14" oninput="maskCPF(this)" required>
 
        </div>
        <div class = "col-md-6">
 
        <label for="cell">Telefone</label>
-       <input type="text" name= "cell" id= "cell" class= "form-control" placeholder="Numero de telefone/celular com DDD" required>  
+       <input type="text" name= "cell" id= "cell" class= "form-control" placeholder="Numero de telefone/celular com DDD" maxlength="14" oninput="maskCPF(this)" required>  
     
     </div>
         </div>
@@ -88,6 +88,7 @@ include_once 'conexao';
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="js/costum.js"></script>
 
     </body>
 </html>
