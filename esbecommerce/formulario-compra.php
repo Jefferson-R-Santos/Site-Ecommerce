@@ -24,7 +24,7 @@ include_once 'conexao';
             <div class="py-5 text-center">
                 <img class="d-block mx-auto mb-4" src="imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
                 <h2>Formulário de Pagamento</h2>
-                <p class="lead">Preencha o formulario abaixo com suas informações para realizar a sua compra</p>
+                <p class="lead">Preencha o formulario abaixo com suas informações para realizar a sua compra.</p>
 
     </div>
     <div class = "row mb-5">
@@ -46,14 +46,14 @@ include_once 'conexao';
         <div class ="form-row">
        <div class = "form-group col-md-6">
        
-       <label for="Pnome">Primeiro Nome</label>
-       <input type="text" name= "Pnome" id= "Pnome" class= "form-control" placeholder="Primeiro Nome" autofocus required>
+       <label for="pnome">Primeiro Nome</label>
+       <input type="text" name= "pnome" id= "pnome" class= "form-control" placeholder="Primeiro Nome" autofocus required>
 
        </div>
        <div class = "col-md-6">
 
-       <label for="Snome">Sobrenome</label>
-       <input type="text" name= "Snome" id= "Snome" class= "form-control" placeholder="Sobrenome" required>  
+       <label for="snome">Sobrenome</label>
+       <input type="text" name= "snome" id= "snome" class= "form-control" placeholder="Sobrenome" required>  
     
     </div>
         </div>
@@ -61,16 +61,22 @@ include_once 'conexao';
         <div class ="form-row">
        <div class = "form-group col-md-6">
        
-       <label for="Pnome">CPF</label>
+       <label for="cpf">CPF</label>
        <input type="text" name= "cpf" id= "cpf" class= "form-control" placeholder="Somente os numeros do CPF" required>
 
        </div>
        <div class = "col-md-6">
 
-       <label for="Snome">Telefone</label>
+       <label for="cell">Telefone</label>
        <input type="text" name= "cell" id= "cell" class= "form-control" placeholder="Numero de telefone/celular com DDD" required>  
     
     </div>
+        </div>
+        <div>
+
+        <label for="email">Email</label>
+        <input type="email" name= "email" id= "email" class= "form-control" placeholder="Insira seu melhor email" required>  
+
         </div>
       </form>
       </div>
