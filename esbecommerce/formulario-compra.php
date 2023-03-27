@@ -13,17 +13,23 @@ include_once 'conexao';
     </head>
     <body>
     <?php
-        $query_products = "SELECT id, nome, descrição , preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
+        $query_products = "SELECT id, nome, preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
         $result_disponiveis = $conn->prepare($query_products);
         $result_disponiveis->bindParam(':id', $id, PDO::PARAM_INT);
         $result_disponiveis->execute();
         $row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC);
-        var_dump($row_disponiveis);
         extract($row_disponiveis);
         ?>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <div class = "container">
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="imagens" alt="" width="72" height="72">
+                <h2>Formulário de Pagamento</h2>
+                <p class="lead">Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+    </div>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
     </body>
 </html>
