@@ -2,16 +2,16 @@ function maskCPF(numeroCPF) {
     var cpf = numeroCPF.value;
 
     if (isNaN(cpf[cpf.length - 1])) { // Proibir caractere que não seja número
-        numberCPF.value = cpf.substring(0, cpf.length - 1);
+        numeroCPF.value = cpf.substring(0, cpf.length - 1);
         return;
     }
 
     if(cpf.length === 3 || cpf.length === 7){
-        numberCPF.value += ".";
+        numeroCPF.value += ".";
     }
 
     if(cpf.length === 11){
-        numberCPF.value += "-";
+        numeroCPF.value += "-";
     }
 
 }
