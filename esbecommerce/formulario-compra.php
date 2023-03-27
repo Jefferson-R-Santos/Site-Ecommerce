@@ -81,7 +81,7 @@ include_once 'conexao';
 
         </div>
 
-        <button type= "submit" class="btn btn-outline-success">Enviar</button>
+        <button type= "submit" class="btn btn-outline-success text-center">Enviar</button>
 
       </form>
       </div>

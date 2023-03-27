@@ -11,9 +11,7 @@ include_once 'conexao';
         <title>Site Ecommerce</title>
     </head>
     <body>
-        <?php
-       
-        ?>
+    <?php include_once 'menu.php'; ?>
         <div class="container">
             <h2 class="display-4 mt-5 mb-5">Produtos Disponiveis</h2>
             <?php
