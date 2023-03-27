@@ -13,7 +13,7 @@ include_once 'conexao';
     </head>
     <body>
         <?php
-        $query_products = "SELECT id, nome, preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
+        $query_products = "SELECT id, nome, descrição , preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
         $result_disponiveis = $conn->prepare($query_products);
         $result_disponiveis->bindParam(':id', $id, PDO::PARAM_INT);
         $result_disponiveis->execute();
@@ -31,8 +31,13 @@ include_once 'conexao';
             <div class = "col-md-6">
             <p>De R$ <?php echo number_format($preçoSD, 2, ",", ".");?></p>
             <p>Por R$ <?php echo number_format($preço, 2, ",", ".");?> </p>
+            <p><a href ="formulario-compra.php?id=<?php echo $id ; ?>" class = "btn- btn-primary">Comprar</a></p>
             </div>
-
+        </div>
+        <div class = "row">
+        <div class ="col-md-12 mt-5">
+             <?php echo $descrição ; ?>
+        </div>
         </div>
         </div>
 
