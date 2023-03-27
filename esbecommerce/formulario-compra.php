@@ -32,7 +32,7 @@ include_once 'conexao';
 <h3> <?php echo $nome ; ?> </h3>
         </div>
         <div class = "col-md-4">
-         <div class= "mb-1"> <?php echo number_format($oreço, 2, ",", "."); ?> </div>
+         <div class= "mb-1"> <?php echo number_format($preço, 2, ",", "."); ?> </div>
         </div>
     </div>
 
