@@ -28,7 +28,7 @@ $dados = [
       "phone"=> $celular
      ]
 ];
-
+var_dump($dados);
 //iniciar Curl
 $pd = curl_init();
 
