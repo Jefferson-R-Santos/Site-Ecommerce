@@ -46,6 +46,6 @@ $resultado = curl_exec($pd);
 $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
-
+var_dump($dados_resultado);
 
 ?>
