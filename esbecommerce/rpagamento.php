@@ -2,6 +2,17 @@
 
 $picpaytoken = "";
 
+$referenceId = "102030"; 
+$callbackUrl = "http://www.sualoja.com.br/callback";
+$returnUrl = "http://www.sualoja.com.br/cliente/pedido/";
+$value = 0.50;
+$expiresAt = "2023-04-01T16:00:00-03:00";
+$nome = "João";
+$sobrenome = "Da Silva";
+$documentos = "123.456.789-10";
+$email = "test@picpay.com";
+$celular = "+55 27 12345-6789";
+
 //Dados da compra
 $dados = [
     "referenceId" => $referenceId,
