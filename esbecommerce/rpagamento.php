@@ -4,7 +4,7 @@ $picpaytoken = "";
 
 $referenceId = rand(100000, 999999); 
 $callbackUrl = "http://www.sualoja.com.br/callback";
-$returnUrl = "http://www.sualoja.com.br/cliente/$referenceId";
+$returnUrl = "http://www.sualoja.com.br/cliente/pedido/";
 $valor = 0.50;
 $expiresAt = "2023-04-01T16:00:00-03:00";
 $nome = "João";
