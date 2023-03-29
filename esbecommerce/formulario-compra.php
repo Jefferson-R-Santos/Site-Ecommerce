@@ -26,7 +26,17 @@ include_once 'conexao';
 
         //Receber os Dados do Formulario abaixo
         $cliented = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        var_dump($cliented);
+
+        //Acessar If quando o usuario clica no botão
+        if (isset( $cliented['BtnPicPay'])) {
+            var_dump($cliented);
+            $empty_input = false;
+            $cliented= array_map('trim', $cliented);
+            if (in_array("", $cliented)) {
+            $empty_input = true;
+            $msg = "";
+            }
+        }
 
         ?>
     <div class = "container">
@@ -89,7 +99,7 @@ include_once 'conexao';
         </div>
         
 
-        <button type= "submit" name="BtnPicPay" class="btn btn-outline-success">Enviar</button>
+        <button type= "submit" name="BtnPicPay" class="btn btn-outline-success" value="Enviar">Enviar</button>
         
 
       </form>
