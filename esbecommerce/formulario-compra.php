@@ -4,7 +4,7 @@ ob_start();
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 if (empty($id)) {
-  header("location: index.php");
+  header("Location: index.php");
   die("Erro: Pagina não encontrada <br>");
 }
 include_once 'conexao';
@@ -17,7 +17,7 @@ include_once 'conexao';
   $result_disponiveis->bindParam(':id', $id, PDO::PARAM_INT);
   $result_disponiveis->execute();
   if($result_disponiveis->rowCount() == 0) {
-    header("location: index.php");
+    header("Location: index.php");
   die("Erro: Pagina não encontrada <br>");
   }
   $row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC);
