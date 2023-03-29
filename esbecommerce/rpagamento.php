@@ -63,5 +63,7 @@ $dados_resultado = json_decode($resultado);
 var_dump($dados_resultado);
 
 echo "<img src='".$dados_resultado->qrcode->base64."'><br><br>";
-echo "Link para pagamento: ".$dados_resultado
+echo "Link para pagamento: <a href='".$dados_resultado->paymentUrl. "' target='_blank'> Fatura </a> <br><br>"
+
+
 ?>

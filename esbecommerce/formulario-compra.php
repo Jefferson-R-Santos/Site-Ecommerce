@@ -15,12 +15,19 @@ include_once 'conexao';
 <?php include_once 'menu.php'; ?>
 
     <?php
+    //Pesquisar as informações do produto no Banco de Dados
+
         $query_products = "SELECT id, nome, preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
         $result_disponiveis = $conn->prepare($query_products);
         $result_disponiveis->bindParam(':id', $id, PDO::PARAM_INT);
         $result_disponiveis->execute();
         $row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC);
         extract($row_disponiveis);
+
+        //Receber os Dados do Formulario abaixo
+        $cliented = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        var_dump($cliented);
+
         ?>
     <div class = "container">
             <div class="py-5 text-center">
@@ -44,7 +51,7 @@ include_once 'conexao';
 <div class = "col-md-12"> 
     <h4 class = "mb-3"> Informações Pessoais</h4>
       
-      <form>
+      <form method="POST" action="formulario-compra.php?id= <?php echo $id ; ?>">
         <div class ="form-row">
        <div class = "form-group col-md-6">
        
@@ -82,7 +89,7 @@ include_once 'conexao';
         </div>
         
 
-        <button type= "submit" class="btn btn-outline-success">Enviar</button>
+        <button type= "submit" name="BtnPicPay" class="btn btn-outline-success">Enviar</button>
         
 
       </form>
