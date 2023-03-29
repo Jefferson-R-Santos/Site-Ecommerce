@@ -50,7 +50,7 @@ include_once 'conexao';
             $empty_input = true;
             $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario preencher todos os campos!</div>";
             } 
-            elseif (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
+            elseif (!filter_var($cliented['email'], FILTER_VALIDATE_EMAIL)) {
                 $empty_input = true;
                 $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
             }
