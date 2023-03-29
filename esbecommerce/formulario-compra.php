@@ -1,6 +1,27 @@
 <?php
+ob_start();
+
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
+
+if (empty($id)) {
+  header("location: index.php");
+  die("Erro: Pagina não encontrada <br>");
+}
 include_once 'conexao';
+
+
+  //Pesquisar as informações do produto no Banco de Dados
+
+  $query_products = "SELECT id, nome, preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
+  $result_disponiveis = $conn->prepare($query_products);
+  $result_disponiveis->bindParam(':id', $id, PDO::PARAM_INT);
+  $result_disponiveis->execute();
+  if($result_disponiveis->rowCount() == 0) {
+    header("location: index.php");
+  die("Erro: Pagina não encontrada <br>");
+  }
+  $row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC);
+  extract($row_disponiveis);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,15 +36,7 @@ include_once 'conexao';
 <?php include_once 'menu.php'; ?>
 
     <?php
-    //Pesquisar as informações do produto no Banco de Dados
-
-        $query_products = "SELECT id, nome, preço, imagem FROM disponiveis WHERE id =:id LIMIT 1";
-        $result_disponiveis = $conn->prepare($query_products);
-        $result_disponiveis->bindParam(':id', $id, PDO::PARAM_INT);
-        $result_disponiveis->execute();
-        $row_disponiveis = $result_disponiveis->fetch(PDO::FETCH_ASSOC);
-        extract($row_disponiveis);
-
+  
         //Receber os Dados do Formulario abaixo
         $cliented = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -33,9 +46,18 @@ include_once 'conexao';
             $empty_input = false;
             $cliented= array_map('trim', $cliented);
             if (in_array("", $cliented)) {
+                //Só é Necessario cso queira tirar o comando required do input
             $empty_input = true;
-            $msg = "";
+            $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario preencher todos os campos!</div>";
+            } elseif (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
+                $empty_input = true;
+                $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
             }
+        //Acessa o if quando não a erro em nenhum campo do formulario
+            if (!$empty_input) {
+            
+        }
+        
         }
 
         ?>
@@ -61,6 +83,13 @@ include_once 'conexao';
 <div class = "col-md-12"> 
     <h4 class = "mb-3"> Informações Pessoais</h4>
       
+    <?php 
+    if (!empty($msg)) {
+        echo $msg;
+        $msg = "";
+    }
+    ?>
+
       <form method="POST" action="formulario-compra.php?id= <?php echo $id ; ?>">
         <div class ="form-row">
        <div class = "form-group col-md-6">
