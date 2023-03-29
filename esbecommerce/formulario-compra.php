@@ -49,13 +49,16 @@ include_once 'conexao';
                 //Só é Necessario cso queira tirar o comando required do input
             $empty_input = true;
             $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario preencher todos os campos!</div>";
-            } elseif (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
+            } 
+            elseif (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
                 $empty_input = true;
                 $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
             }
         //Acessa o if quando não a erro em nenhum campo do formulario
             if (!$empty_input) {
-            
+            // Salvar dados da compra no Banco de Dados 
+        
+
         }
         
         }
