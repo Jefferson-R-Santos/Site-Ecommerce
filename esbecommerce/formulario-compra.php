@@ -58,8 +58,25 @@ include_once './token.php';
             }
         //Acessa o if quando não a erro em nenhum campo do formulario
             if (!$empty_input) {
+          //Data para Salvar no Banco de Dados e enviar para o PicPay
+          $cliented ['cadastro'] = date('Y-m-d H:i:s');
+          $cliented['vencimento'] = date('Y-m-d H:i:s', strtotime($cliented ['cadastro'].'+3days'));
+          $vencimento = date(DATE_ATOM, strtotime($cliented['vencimento']));
+
             // Salvar dados da compra no Banco de Dados 
-        
+          $query_cliente = "INSERT INTO clientes (pnome, snome, cpf, cell, email, expires_at, produtod_id, cadastro) 
+           VALUES (:pnome, :snome, :cpf, :cell, :email, :expires_at, :produtod_id, :cadastro)";
+           $add_cliente = $conn->prepare($query_cliente);
+           $add_cliente->bindParam(":pnome", $cliented['pnome'], PDO::PARAM_STR);
+           $add_cliente->bindParam("::snome", $cliented['snome'], PDO::PARAM_STR);
+           $add_cliente->bindParam(":cpf", $cliented['cpf'], PDO::PARAM_STR);
+           $add_cliente->bindParam(":cell", $cliented['cell'], PDO::PARAM_STR);
+           $add_cliente->bindParam(":email", $cliented['email'], PDO::PARAM_STR);
+           $add_cliente->bindParam(":expires_at", $cliented['vencimento'], PDO::PARAM_STR);
+           $add_cliente->bindParam(":produtod_id", $id);
+           $add_cliente->bindParam(":cadastro", $cliented['cadastro'], PDO::PARAM_STR);
+
+           $add_cliente->execute();
 
         }
         
