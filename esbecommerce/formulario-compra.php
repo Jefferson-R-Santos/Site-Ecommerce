@@ -129,8 +129,41 @@ $dados_resultado = json_decode($resultado);
 //Imprimir o conteudo da resposta
 var_dump($dados_resultado);
 
-echo "<img src='".$dados_resultado->qrcode->base64."'><br><br>";
-echo "Link para pagamento: <a href='".$dados_resultado->paymentUrl. "' target='_blank'> Fatura </a> <br><br>";
+if (isset($dados_resultado->errors)) {
+  # code...
+} else {
+  # code...
+}
+
+
+?>
+<!-- Janela Modal com QrCode -->
+<div class="modal fade" id="picpay" tabindex="-1" aria-labelledby="picpayLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-success text-white">
+        <h1 class="modal-title fs-5" id="picpayLabel">QrCode para Pagamento</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <h1 class="modal-title fs-5" id="picpayLabel">Pague com PicPay escaneando o codigo abaixo</h1>
+      <?php 
+      
+      echo "<img src='".$dados_resultado->qrcode->base64."'><br><br>";
+
+      ?>
+      <p class = "lead">Se tiver problemas em escanear o QrCode, tente esse link abaixo</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+
 
           } else {
             $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
@@ -219,6 +252,22 @@ echo "Link para pagamento: <a href='".$dados_resultado->paymentUrl. "' target='_
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="js/costum.js"></script>
+
+<?php 
+
+if (isset($dados_resultado->paymentUrl)) {
+  ?> 
+<script>
+
+$(document).ready(function(){
+  $('#picpay').modal('show');
+});
+
+</script>
+<?php 
+}
+
+?>
 
     </body>
 </html>
