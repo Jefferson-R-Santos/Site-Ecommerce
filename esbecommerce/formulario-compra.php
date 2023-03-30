@@ -77,6 +77,65 @@ include_once './token.php';
            $add_cliente->bindParam(":cadastro", $cliented['cadastro']);
 
            $add_cliente->execute();
+
+           if ($add_cliente->rowCount()) {
+           $ultimoid = $conn -> lastInsertId(); 
+           $cell_br = str_replace("(", " ", $cliented['cell']);
+           $cell_br = str_replace(")", " ", $cell_br);
+           $dados = [
+            "referenceId" => $ultimoid,
+            "callbackUrl"=> CALLBACKURL,
+            "returnUrl"=> RETURNURL . $ultimoid,
+            "value"=> (double) $preço,
+            "expiresAt"=> $vencimento,
+            "buyer"=> [ 
+              "firstName"=> $cliented['pnome'],
+              "lastName"=> $cliented['snome'],
+              "document"=> $cliented['cpf'],
+              "email"=> $cliented['email'],
+              "phone"=> "+55 $cell_br"
+             ]
+        ]; 
+        //iniciar Curl
+$pd = curl_init();
+
+// URL de requisição picpay
+curl_setopt($pd, CURLOPT_URL, 'https://appws.picpay.com/ecommerce/public/payments');
+
+//Parametro de resposta da transferencia 
+curl_setopt($pd, CURLOPT_RETURNTRANSFER, true);
+
+//Enviar o parametro referente ao SSL
+curl_setopt($pd, CURLOPT_SSL_VERIFYPEER, false);
+
+// Enviar dados da compra
+curl_setopt($pd, CURLOPT_POSTFIELDS, json_encode($dados));
+
+// Enviar headers
+$headers = [];
+$headers [] = 'Content_Type: application/json';
+$headers [] = 'x-picpay-token:'. PICPAYTOKEN;
+curl_setopt($pd, CURLOPT_HTTPHEADER, $headers);
+
+//Realizar Requisição
+$resultado = curl_exec($pd);
+
+//Fechar conexão do curl
+curl_close($pd);
+
+//Ler o Conteudo da resposta
+$dados_resultado = json_decode($resultado);
+
+//Imprimir o conteudo da resposta
+var_dump($dados_resultado);
+
+echo "<img src='".$dados_resultado->qrcode->base64."'><br><br>";
+echo "Link para pagamento: <a href='".$dados_resultado->paymentUrl. "' target='_blank'> Fatura </a> <br><br>";
+
+          } else {
+            $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
+           }
+           
            }
         
         }
