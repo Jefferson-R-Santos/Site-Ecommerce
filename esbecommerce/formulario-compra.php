@@ -127,16 +127,16 @@ curl_close($pd);
 $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
-var_dump($dados_resultado);
+//var_dump($dados_resultado);
 
-if (isset($dados_resultado->errors)) {
-  # code...
+if (isset($dados_resultado->code) AND $dados_resultado->code !=200) {
+  $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Tente Novamente!</div>";
 } else {
-  # code...
-}
-
-
-?>
+  //Editar compra com informações que o picpay retornou
+ $query_up_picpay = "UPDATE clientes SET payment_url = '".$dados_resultado->paymentUrl."', qrcode = '".$dados_resultado->qrcode->base64."', modificação = NOW() WHERE id = $ultimoid LIMIT 1";
+ $up_picpay = $conn->prepare($query_up_picpay);
+ $up_picpay->execute();
+  ?>
 <!-- Janela Modal com QrCode -->
 <div class="modal fade" id="picpay" tabindex="-1" aria-labelledby="picpayLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -163,6 +163,10 @@ if (isset($dados_resultado->errors)) {
 </div>
 
 <?php
+}
+
+
+
 
 
           } else {
