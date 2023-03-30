@@ -68,7 +68,7 @@ include_once './token.php';
            VALUES (:pnome, :snome, :cpf, :cell, :email, :expires_at, :produtod_id, :cadastro)";
            $add_cliente = $conn->prepare($query_cliente);
            $add_cliente->bindParam(":pnome", $cliented['pnome'], PDO::PARAM_STR);
-           $add_cliente->bindParam("::snome", $cliented['snome']);
+           $add_cliente->bindParam(":snome", $cliented['snome']);
            $add_cliente->bindParam(":cpf", $cliented['cpf']);
            $add_cliente->bindParam(":cell", $cliented['cell']);
            $add_cliente->bindParam(":email", $cliented['email']);
@@ -76,11 +76,11 @@ include_once './token.php';
            $add_cliente->bindParam(":produtod_id", $id);
            $add_cliente->bindParam(":cadastro", $cliented['cadastro']);
 
-           
+           $add_cliente->execute();
            }
         
         }
-        $add_cliente->execute();
+        
         ?>
     <div class = "container">
             <div class="py-5 text-center">
