@@ -76,8 +76,9 @@ include_once './token.php';
            $add_cliente->bindParam(":produtod_id", $id);
            $add_cliente->bindParam(":cadastro", $cliented['cadastro']);
 
+           $add_cliente->execute();
            }
-        $add_cliente->execute();
+        
         }
 
         ?>
