@@ -8,6 +8,8 @@ if (empty($id)) {
   die("Erro: Pagina não encontrada <br>");
 }
 include_once 'conexao';
+include_once './token.php';
+
 
 
   //Pesquisar as informações do produto no Banco de Dados

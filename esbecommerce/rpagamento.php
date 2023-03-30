@@ -1,6 +1,7 @@
 <?php
 
-$picpaytoken = "";
+include_once './token.php';
+
 
 $referenceId = rand(100000, 999999); 
 $callbackUrl = "http://www.sualoja.com.br/callback";
@@ -47,7 +48,7 @@ curl_setopt($pd, CURLOPT_POSTFIELDS, json_encode($dados));
 // Enviar headers
 $headers = [];
 $headers [] = 'Content_Type: application/json';
-$headers [] = 'x-picpay-token:'. $picpaytoken;
+$headers [] = 'x-picpay-token:'. PICPAYTOKEN;
 curl_setopt($pd, CURLOPT_HTTPHEADER, $headers);
 
 //Realizar Requisição
