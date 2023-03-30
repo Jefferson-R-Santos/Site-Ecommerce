@@ -68,13 +68,13 @@ include_once './token.php';
            VALUES (:pnome, :snome, :cpf, :cell, :email, :expires_at, :produtod_id, :cadastro)";
            $add_cliente = $conn->prepare($query_cliente);
            $add_cliente->bindParam(":pnome", $cliented['pnome'], PDO::PARAM_STR);
-           $add_cliente->bindParam("::snome", $cliented['snome'], PDO::PARAM_STR);
-           $add_cliente->bindParam(":cpf", $cliented['cpf'], PDO::PARAM_STR);
-           $add_cliente->bindParam(":cell", $cliented['cell'], PDO::PARAM_STR);
-           $add_cliente->bindParam(":email", $cliented['email'], PDO::PARAM_STR);
-           $add_cliente->bindParam(":expires_at", $cliented['vencimento'], PDO::PARAM_STR);
+           $add_cliente->bindParam("::snome", $cliented['snome']);
+           $add_cliente->bindParam(":cpf", $cliented['cpf']);
+           $add_cliente->bindParam(":cell", $cliented['cell']);
+           $add_cliente->bindParam(":email", $cliented['email']);
+           $add_cliente->bindParam(":expires_at", $cliented['vencimento']);
            $add_cliente->bindParam(":produtod_id", $id);
-           $add_cliente->bindParam(":cadastro", $cliented['cadastro'], PDO::PARAM_STR);
+           $add_cliente->bindParam(":cadastro", $cliented['cadastro']);
 
            $add_cliente->execute();
 
