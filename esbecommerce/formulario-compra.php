@@ -60,7 +60,7 @@ include_once './token.php';
             if (!$empty_input) {
           //Data para Salvar no Banco de Dados e enviar para o PicPay
           $cliented ['cadastro'] = date('Y-m-d H:i:s');
-          $cliented['vencimento'] = date('Y-m-d H:i:s', strtotime($cliented ['cadastro'].'+3days'));
+          $cliented ['vencimento'] = date('Y-m-d H:i:s', strtotime($cliented ['cadastro'].'+3days'));
           $vencimento = date(DATE_ATOM, strtotime($cliented['vencimento']));
 
             // Salvar dados da compra no Banco de Dados 
@@ -76,10 +76,8 @@ include_once './token.php';
            $add_cliente->bindParam(":produtod_id", $id);
            $add_cliente->bindParam(":cadastro", $cliented['cadastro']);
 
-           $add_cliente->execute();
-
-        }
-        
+           }
+        $add_cliente->execute();
         }
 
         ?>
