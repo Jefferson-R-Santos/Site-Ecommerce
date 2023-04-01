@@ -2,6 +2,8 @@
 
 include_once '../token.php';
 
+include_once 'conexao';
+
 $id_referencia = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if (!empty($id_referencia)) {
@@ -44,7 +46,9 @@ if ($dados_resultado->status == "created") {
 //Editar a compra informando o status da compra no PicPay para o Banco de Dados
 $query_up_picpay = "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
 
-$conn->prepare($query_up_picpay );
+$up_picpay = $conn->prepare($query_up_picpay);
+
+$up_picpay->execute();
 
 } else {
     echo "Erro: Necessario enviar o Id de referencia <br>";
