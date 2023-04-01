@@ -37,7 +37,14 @@ $dados_resultado = json_decode($resultado);
 //Imprimir o conteudo da resposta
 var_dump($dados_resultado);
 
+if ($dados_resultado->status == "created") {
+    $status_id = 2;   
+}
 
+//Editar a compra informando o status da compra no PicPay para o Banco de Dados
+$query_up_picpay = "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
+
+$conn->prepare($query_up_picpay );
 
 } else {
     echo "Erro: Necessario enviar o Id de referencia <br>";
