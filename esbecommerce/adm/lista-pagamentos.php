@@ -15,10 +15,16 @@
 <body>
 
 <?php 
+
 include_once './menu.php';
-echo "Lista de pagamentos";
 
 ?>
+
+<div class = "container">
+
+<h2 class="display-4 mt-3 mb-3">Status de Pagamentos</h2>
+
+</div>
 
 </body>
 
