@@ -127,7 +127,7 @@ curl_close($pd);
 $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
-//var_dump($dados_resultado);
+var_dump($dados_resultado);
 
 if (isset($dados_resultado->code) AND $dados_resultado->code !=200) {
   $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Tente Novamente!</div>";
