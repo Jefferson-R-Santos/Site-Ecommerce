@@ -51,10 +51,12 @@ if ($resultado_status->rowCount() != 0) {
   //var_dump($status_id);
 
 //Editar a compra informando o status da compra no PicPay para o Banco de Dados
+$query_up_pagamento =  "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1 ";
+$up_status_picpay = $conn->prepare($query_up_pagamento);
+$up_status_picpay->execute();
 
-
-
-
+}else {
+  echo "Erro: Status não encontrado  <br>";
 }
 
 
