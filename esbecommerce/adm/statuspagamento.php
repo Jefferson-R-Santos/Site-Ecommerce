@@ -43,6 +43,13 @@ if ($dados_resultado->status == "created") {
   $status_id = 2;
 }
 
+//Editar a compra informando o status da compra no PicPay para o Banco de Dados
+$query_up_picpay = "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
+
+$up_picpay = $conn->prepare($query_up_picpay);
+
+$up_picpay->execute();
+
 $query_status_pagamento = "SELECT id status_id FROM status_pagamento WHERE status = ' " . $dados_resultado->status . " ' LIMIT 1 ";
 $resultado_status = $conn->prepare($query_status_pagamento);
 $resultado_status->execute();
@@ -53,12 +60,7 @@ if ($resultado_status->rowCount() != 0) {
   extract($row_status_pagamento);
   var_dump($status_id);
 
-//Editar a compra informando o status da compra no PicPay para o Banco de Dados
-$query_up_picpay = "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
 
-$up_picpay = $conn->prepare($query_up_picpay);
-
-$up_picpay->execute();
 }
 
 
