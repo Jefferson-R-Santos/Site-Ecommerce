@@ -23,7 +23,7 @@ curl_setopt($pd, CURLOPT_SSL_VERIFYPEER, true);
 
 // Enviar headers
 $headers = [];
-$headers [] = 'Content_Type: application/json';
+$headers [] = 'Content-Type: application/json';
 $headers [] = 'x-picpay-token:'. PICPAYTOKEN;
 curl_setopt($pd, CURLOPT_HTTPHEADER, $headers);
 
@@ -47,18 +47,18 @@ if ($resultado_status->rowCount() != 0) {
   $row_status_pagamento = $resultado_status->fetch(PDO::FETCH_ASSOC); 
   var_dump($row_status_pagamento);
 }
-}
+
 //Editar a compra informando o status da compra no PicPay para o Banco de Dados
 /*$query_up_picpay = "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
 
 $up_picpay = $conn->prepare($query_up_picpay);
 
-$up_picpay->execute();
+$up_picpay->execute();*/
 
 } else {
     echo "Erro: Necessario enviar o Id de referencia <br>";
 }
 
 
-*/
+
 ?>
