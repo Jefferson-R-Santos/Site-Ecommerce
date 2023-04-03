@@ -39,8 +39,8 @@ $dados_resultado = json_decode($resultado);
 //Imprimir o conteudo da resposta
 var_dump($dados_resultado);
 
-$status_pagamento = "SELECT id status_id FROM clientes WHERE status = ' " . $dados_resultado->status . " ' LIMIT 1 ";
-$resultado_status = $conn->prepare($status_pagamento);
+$query_status_pagamento = "SELECT id status_id FROM clientes WHERE status = ' " . $dados_resultado->status . " ' LIMIT 1 ";
+$resultado_status = $conn->prepare($query_status_pagamento);
 $resultado_status->execute();
 
 if ($resultado_status->rowCount() != 0) {
