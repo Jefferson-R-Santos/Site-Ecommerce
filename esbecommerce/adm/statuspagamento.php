@@ -38,7 +38,7 @@ $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
 var_dump($dados_resultado);
-
+/*
 if ($dados_resultado->status == "created") {
   $status_id = 2;
 }
@@ -66,7 +66,7 @@ $up_picpay->execute();
  else {
     echo "Erro: Necessario enviar o Id de referencia <br>";
  }
-}
+
 
 
 ?>
