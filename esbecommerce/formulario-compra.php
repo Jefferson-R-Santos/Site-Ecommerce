@@ -44,7 +44,7 @@ include_once './token.php';
 
         //Acessar If quando o usuario clica no botão
         if (isset( $cliented['BtnPicPay'])) {
-            var_dump($cliented);
+            //var_dump($cliented);
             $empty_input = false;
             $cliented= array_map('trim', $cliented);
             if (in_array("", $cliented)) {
@@ -127,7 +127,7 @@ curl_close($pd);
 $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
-var_dump($dados_resultado);
+//var_dump($dados_resultado);
 
 if (isset($dados_resultado->code) AND $dados_resultado->code !=200) {
   $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Tente Novamente!</div>";
@@ -202,7 +202,7 @@ if (isset($dados_resultado->code) AND $dados_resultado->code !=200) {
     <?php 
     if (!empty($msg)) {
         echo $msg;
-        $msg = "";
+        $msg = "Erro: Tente Novamente";
     }
     ?>
 
