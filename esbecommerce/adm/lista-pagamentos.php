@@ -1,3 +1,6 @@
+<?php 
+include_once '../conexao.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,6 +26,19 @@ include_once './menu.php';
 <div class = "container">
 
 <h2 class="display-4 mt-3 mb-3">Status de Pagamentos</h2>
+
+<?php 
+
+$query_pagamentos = "SELECT id, pnome, snome, email, produtod_id, status_pagamento_id FROM clientes ORDER BY id DESC";
+$resultado_pagamentos = $conn->prepare($query_pagamentos);
+$resultado_pagamentos->execute();
+while ($row_pagamento = $resultado_pagamentos->fetch(PDO::FETCH_ASSOC)) {
+
+    var_dump($row_pagamento);
+
+}
+
+?>
 
 </div>
 
