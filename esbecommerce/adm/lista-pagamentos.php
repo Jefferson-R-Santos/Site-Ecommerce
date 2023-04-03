@@ -61,7 +61,7 @@ while ($row_pagamento = $resultado_pagamentos->fetch(PDO::FETCH_ASSOC)) {
     echo "<td>$produtod_id</td>";
     echo "<td>$expires_at</td>";
     echo "<td>$status_pagamento_id</td>";
-    echo "<td></td>";
+    echo "<td><a href = 'statuspagamento.php?id=$id'>Status<a/></td>";
     echo "</tr>";
 }
 
