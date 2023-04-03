@@ -37,7 +37,7 @@ include_once './menu.php';
       <th scope="col">EMAIL</th>
       <th scope="col">STATUS</th>
       <th scope="col">PRAZO</th>
-      <th scope="col">PRODUTO</th>
+      <th scope="col" class= "text-center">PRODUTO</th>
       <th scope="col" class= "text-center">AÇÕES</th>
     </tr>
   </thead>
@@ -60,7 +60,7 @@ while ($row_pagamento = $resultado_pagamentos->fetch(PDO::FETCH_ASSOC)) {
     echo "<td>$email</td>";
     echo "<td>$produtod_id</td>";
     echo "<td>$expires_at</td>";
-    echo "<td>$status_pagamento_id</td>";
+    echo "<td class= 'text-center'>$status_pagamento_id</td>";
     echo "<td class= 'text-center'><a href = 'statuspagamento.php?id=$id' class= 'btn btn-outline-success'>Status<a/></td>";
     echo "</tr>";
 }
