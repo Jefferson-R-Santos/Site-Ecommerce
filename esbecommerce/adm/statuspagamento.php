@@ -43,16 +43,15 @@ $query_status_pagamento = "SELECT id AS status_id FROM status_pagamento WHERE st
 $resultado_status = $conn->prepare($query_status_pagamento);
 $resultado_status->execute();
 
+
+
 if ($resultado_status->rowCount() != 0) {
   $row_status_pagamento = $resultado_status->fetch(PDO::FETCH_ASSOC); 
   extract($row_status_pagamento);
   //var_dump($status_id);
 
 //Editar a compra informando o status da compra no PicPay para o Banco de Dados
-$query_up_picpay = "UPDATE clientes SET status_pagamento_id = status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
-$up_picpay = $conn->prepare($query_up_picpay);
 
-$up_picpay->execute();
 
 
 
