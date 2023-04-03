@@ -113,7 +113,7 @@ curl_setopt($pd, CURLOPT_POSTFIELDS, json_encode($dados));
 
 // Enviar headers
 $headers = [];
-$headers [] = 'Content_Type: application/json';
+$headers [] = 'Content-Type: application/json';
 $headers [] = 'x-picpay-token:'. PICPAYTOKEN;
 curl_setopt($pd, CURLOPT_HTTPHEADER, $headers);
 
