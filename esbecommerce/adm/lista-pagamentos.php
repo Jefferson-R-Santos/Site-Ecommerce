@@ -35,9 +35,9 @@ include_once './menu.php';
       <th scope="col">NOME</th>
       <th scope="col">SOBRENOME</th>
       <th scope="col">EMAIL</th>
-      <th scope="col">STATUS</th>
+      <th scope="col">PRODUTO</th>
       <th scope="col">PRAZO</th>
-      <th scope="col" class= "text-center">PRODUTO</th>
+      <th scope="col" class= "text-center">STATUS</th>
       <th scope="col" class= "text-center">AÇÕES</th>
     </tr>
   </thead>
