@@ -39,7 +39,7 @@ $dados_resultado = json_decode($resultado);
 //Imprimir o conteudo da resposta
 var_dump($dados_resultado);
 
-$query_status_pagamento = "SELECT id status_id FROM clientes WHERE status = ' " . $dados_resultado->status . " ' LIMIT 1 ";
+$query_status_pagamento = "SELECT id status_id FROM status_pagamento WHERE status = ' " . $dados_resultado->status . " ' LIMIT 1 ";
 $resultado_status = $conn->prepare($query_status_pagamento);
 $resultado_status->execute();
 
