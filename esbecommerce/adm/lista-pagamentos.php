@@ -15,7 +15,7 @@
 <body>
 
 <?php 
-
+include_once './menu.php';
 echo "Lista de pagamentos";
 
 ?>
