@@ -38,7 +38,7 @@ $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
 var_dump($dados_resultado);
-/*
+
 if ($dados_resultado->status == "created") {
   $status_id = 2;
 }
@@ -54,13 +54,13 @@ if ($resultado_status->rowCount() != 0) {
   var_dump($status_id);
 
 //Editar a compra informando o status da compra no PicPay para o Banco de Dados
-/*$query_up_picpay = "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
+$query_up_picpay = "UPDATE clientes SET status_pagamento_id = $status_id, modificação = NOW() WHERE id = $id_referencia LIMIT 1";
 
 $up_picpay = $conn->prepare($query_up_picpay);
 
 $up_picpay->execute();
 }
-*/
+
 
 }
  else {
