@@ -1,6 +1,6 @@
 <?php
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-include_once 'conexao';
+include_once './conexao.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

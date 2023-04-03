@@ -7,7 +7,7 @@ if (empty($id)) {
   header("Location: index.php");
   die("Erro: Pagina não encontrada <br>");
 }
-include_once 'conexao';
+include_once './conexao.php';
 include_once './token.php';
 
 
