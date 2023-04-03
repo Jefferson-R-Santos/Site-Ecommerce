@@ -44,7 +44,7 @@ include_once './token.php';
 
         //Acessar If quando o usuario clica no botão
         if (isset( $cliented['BtnPicPay'])) {
-            //var_dump($cliented);
+            var_dump($cliented);
             $empty_input = false;
             $cliented= array_map('trim', $cliented);
             if (in_array("", $cliented)) {
