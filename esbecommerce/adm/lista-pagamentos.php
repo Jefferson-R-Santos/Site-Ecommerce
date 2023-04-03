@@ -35,6 +35,8 @@ $resultado_pagamentos->execute();
 while ($row_pagamento = $resultado_pagamentos->fetch(PDO::FETCH_ASSOC)) {
 
     var_dump($row_pagamento);
+    extract($row_pagamento);
+    echo "Nome: $pnome <br> Produto: $produtod_id";
 
 }
 
