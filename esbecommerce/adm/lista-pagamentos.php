@@ -27,7 +27,7 @@ include_once './menu.php';
 
 <h2 class="display-4 mt-3 mb-3">Status de Pagamentos</h2>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-dark table-hover table-striped">
 
 <thead>
     <tr>
