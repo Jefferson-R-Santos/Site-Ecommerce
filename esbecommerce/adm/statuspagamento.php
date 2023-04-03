@@ -45,9 +45,9 @@ $resultado_status->execute();
 
 if ($resultado_status->rowCount() != 0) {
   $row_status_pagamento = $resultado_status->fetch(PDO::FETCH_ASSOC); 
-  //var_dump($row_status_pagamento);
-  extract($row_status_pagamento);
-  var_dump($status_id);
+  //var_dump($status_id);
+  //extract($row_status_pagamento);
+  var_dump($row_status_pagamento);
 
 
 }
