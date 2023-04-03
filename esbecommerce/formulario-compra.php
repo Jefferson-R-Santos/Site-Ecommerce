@@ -155,7 +155,7 @@ if (isset($dados_resultado->code) AND $dados_resultado->code !=200) {
       <p class = "lead">Se tiver problemas em escanear o QrCode, tente esse link abaixo</p>
       </div>
       <div class="modal-footer">
-        
+      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
