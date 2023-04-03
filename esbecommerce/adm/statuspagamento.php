@@ -19,7 +19,7 @@ curl_setopt($pd, CURLOPT_URL, "https://appws.picpay.com/ecommerce/public/payment
 curl_setopt($pd, CURLOPT_RETURNTRANSFER, true);
 
 //Enviar o parametro referente ao SSL
-curl_setopt($pd, CURLOPT_SSL_VERIFYPEER, true);
+curl_setopt($pd, CURLOPT_SSL_VERIFYPEER, false);
 
 // Enviar headers
 $headers = [];
