@@ -45,7 +45,7 @@ include_once './menu.php';
 
 <?php 
 
-$query_pagamentos = "SELECT clientes.id, clientes.pnome, clientes.snome, clientes.email, clientes.expires_at, disp.nome AS nome_prod, sts.nome AS nome_sts
+$query_pagamentos = "SELECT clientes.id, clientes.pnome, clientes.snome, clientes.email, clientes.expires_at, disp.nome AS nome_prod, sts.nome AS nome_sts, sts.cor
 FROM clientes
 LEFT JOIN disponiveis AS disp ON disp.id=clientes.produtod_id
 INNER JOIN status_pagamento AS sts ON sts.id=clientes.status_pagamento_id
@@ -64,7 +64,8 @@ while ($row_pagamento = $resultado_pagamentos->fetch(PDO::FETCH_ASSOC)) {
     echo "<td>$email</td>";
     echo "<td>$nome_prod</td>";
     echo "<td>$expires_at</td>";
-    echo "<td class= 'text-center'>$nome_sts</td>";
+    echo "<td class= 'text-center'><span class='badge rounded-pill text-bg-$cor'>$nome_sts</span>
+    </td>";
     echo "<td class= 'text-center'><a href = 'statuspagamento.php?id=$id' class= 'btn btn-outline-success'>Status<a/></td>";
     echo "</tr>";
 }
