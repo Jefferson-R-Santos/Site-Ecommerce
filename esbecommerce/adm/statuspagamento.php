@@ -59,16 +59,16 @@ $query_up_pagamento =  "UPDATE clientes SET status_pagamento_id = $sts_id , modi
 $up_status_picpay = $conn->prepare($query_up_pagamento);
 $up_status_picpay->execute();
 
-$_SESSION ['msg'] = "<div class='alert alert-success d-flex align-items-center' role='alert'>
-<svg class='bi flex-shrink-0 me-2' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>
-<div>
-  Status da Compra Alterado Com Sucesso!
+$_SESSION ['msg'] = "<div class='alert alert-success' role='alert'>
+Status da Compra Alterado Com Sucesso!
 </div>";
 
 header("Location: lista-pagamentos.php ");
 
 }else {
-  $_SESSION ['msg'] = "Erro: Tente Novamente!  <br>";
+  $_SESSION ['msg'] = "<div class='alert alert-danger' role='alert'>
+  Erro: Tente Novamente!
+</div>";
   header("Location: lista-pagamentos.php ");
 
 }
@@ -78,7 +78,9 @@ header("Location: lista-pagamentos.php ");
 
 }
  else {
-  $_SESSION ['msg'] = "Erro: Selecione um Pagamento! <br>";
+  $_SESSION ['msg'] = "<div class='alert alert-danger' role='alert'>
+  Erro: Selecione um Pagamento!
+ </div>";
     header("Location: lista-pagamentos.php ");
  }
 
