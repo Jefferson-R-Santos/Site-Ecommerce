@@ -55,9 +55,16 @@ if ($resultado_status->rowCount() != 0) {
   //var_dump($status_id);
 
   //Cadastrar Status da Transação
-  $query_transacao = "INSERT INTO transacao_status (status_pagamentos_id, cliente_pagamento_id, created) VALUES ($sts_id, $id_referencia, NOW() ) ";
-  $add_transacao = $conn->prepare($query_transacao);
-  $add_transacao->execute();
+  if ((isset($dados_resultado->authorizationId)) AND (!empty($dados_resultado->authorizationId) )) {
+    $query_transacao = "INSERT INTO transacao_status (authorization_id, status_pagamentos_id, cliente_pagamento_id, created) VALUES ('".$dados_resultado->authorizationId."', $sts_id, $id_referencia, NOW() ) ";
+    $add_transacao = $conn->prepare($query_transacao);
+    $add_transacao->execute();
+  } else {
+    $query_transacao = "INSERT INTO transacao_status (status_pagamentos_id, cliente_pagamento_id, created) VALUES ($sts_id, $id_referencia, NOW() ) ";
+    $add_transacao = $conn->prepare($query_transacao);
+    $add_transacao->execute();
+  }
+  
 
 //Editar a compra informando o status da compra no PicPay para o Banco de Dados
 $query_up_pagamento =  "UPDATE clientes SET status_pagamento_id = $sts_id , modificação = NOW() WHERE id = $id_referencia LIMIT 1 ";
