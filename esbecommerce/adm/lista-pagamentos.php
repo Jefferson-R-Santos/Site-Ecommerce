@@ -64,7 +64,7 @@ while ($row_pagamento = $resultado_pagamentos->fetch(PDO::FETCH_ASSOC)) {
     echo "<td>$email</td>";
     echo "<td>$nome_prod</td>";
     echo "<td>$expires_at</td>";
-    echo "<td class= 'text-center'><span class='badge rounded-pill text-bg-$cor'>$nome_sts</span>
+    echo "<td class= 'text-center'><span class='badge badge-pill badge-$cor'>$nome_sts</span>
     </td>";
     echo "<td class= 'text-center'><a href = 'statuspagamento.php?id=$id' class= 'btn btn-outline-success'>Status<a/></td>";
     echo "</tr>";
