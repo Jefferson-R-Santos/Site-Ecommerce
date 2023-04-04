@@ -59,7 +59,11 @@ $query_up_pagamento =  "UPDATE clientes SET status_pagamento_id = $sts_id , modi
 $up_status_picpay = $conn->prepare($query_up_pagamento);
 $up_status_picpay->execute();
 
-$_SESSION ['msg'] = "Status da Compra Alterado Com Sucesso! <br>";
+$_SESSION ['msg'] = "<div class='alert alert-success d-flex align-items-center' role='alert'>
+<svg class='bi flex-shrink-0 me-2' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>
+<div>
+  Status da Compra Alterado Com Sucesso!
+</div>";
 
 header("Location: lista-pagamentos.php ");
 
