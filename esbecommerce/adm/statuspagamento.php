@@ -61,11 +61,11 @@ $up_status_picpay->execute();
 
 $_SESSION ['msg'] = "Status da Compra Alterado Com Sucesso! <br>";
 
-header("Location: lista-pagamento.php ");
+header("Location: lista-pagamentos.php ");
 
 }else {
   $_SESSION ['msg'] = "Erro: Tente Novamente!  <br>";
-  header("Location: lista-pagamento.php ");
+  header("Location: lista-pagamentos.php ");
 
 }
 
@@ -75,7 +75,7 @@ header("Location: lista-pagamento.php ");
 }
  else {
   $_SESSION ['msg'] = "Erro: Selecione um Pagamento! <br>";
-    header("Location: lista-pagamento.php ");
+    header("Location: lista-pagamentos.php ");
  }
 
 
