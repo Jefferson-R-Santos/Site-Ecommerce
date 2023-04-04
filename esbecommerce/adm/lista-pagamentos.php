@@ -1,5 +1,9 @@
 <?php 
+
+session_start();
+
 include_once '../conexao.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,6 +30,16 @@ include_once './menu.php';
 <div class = "container">
 
 <h2 class="display-4 mt-3 mb-3">Status de Pagamentos</h2>
+
+<?php 
+
+if (isset($_SESSION['msg'])) {
+
+echo $_SESSION['msg'];
+unset($_SESSION['msg']);
+}
+
+?>
 
 <table class="table table-bordered table-dark table-hover table-striped">
 

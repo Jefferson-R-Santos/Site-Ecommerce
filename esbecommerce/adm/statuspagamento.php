@@ -1,5 +1,9 @@
 <?php 
 
+session_start();
+
+ob_start();
+
 include_once '../token.php';
 
 include_once '../conexao.php';
@@ -55,8 +59,14 @@ $query_up_pagamento =  "UPDATE clientes SET status_pagamento_id = $sts_id , modi
 $up_status_picpay = $conn->prepare($query_up_pagamento);
 $up_status_picpay->execute();
 
+$_SESSION ['msg'] = "Status da Compra Alterado Com Sucesso! <br>";
+
+header("Location: lista-pagamento.php ");
+
 }else {
-  echo "Erro: Status não encontrado  <br>";
+  $_SESSION ['msg'] = "Erro: Tente Novamente!  <br>";
+  header("Location: lista-pagamento.php ");
+
 }
 
 
@@ -64,7 +74,8 @@ $up_status_picpay->execute();
 
 }
  else {
-    echo "Erro: Necessario enviar o Id de referencia <br>";
+  $_SESSION ['msg'] = "Erro: Selecione um Pagamento! <br>";
+    header("Location: lista-pagamento.php ");
  }
 
 
