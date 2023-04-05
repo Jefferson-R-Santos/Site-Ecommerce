@@ -10,6 +10,8 @@ if (!empty($id_referencia)) {
 include_once './funcao.php';
 $dados_resultado = statusPagamento($id_referencia);
 
+var_dump($dados_resultado);
+
  //iniciar Curl
  $pd = curl_init();
 
