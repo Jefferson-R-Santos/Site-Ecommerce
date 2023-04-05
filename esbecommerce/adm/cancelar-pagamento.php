@@ -27,11 +27,25 @@ curl_setopt($pd, CURLOPT_POST, true);
 
 if (isset($dados_resultado->authorizationId)) {
 
-    echo "Compra paga <br>";
+    //Enviar dados para cancelamento 
+    $dados_autorizacao = ['authorizationId' => $dados_resultado->authorizationId];
 
-} else {
-    echo "Compra não paga <br>";
+    // Enviar dados da compra
+    curl_setopt($pd, CURLOPT_POSTFIELDS, json_encode($dados_autorizacao));
+
 }
+
+// Enviar headers
+$headers = [];
+$headers [] = 'Content-Type: application/json';
+$headers [] = 'x-picpay-token:'. PICPAYTOKEN;
+curl_setopt($pd, CURLOPT_HTTPHEADER, $headers);
+
+//Realizar Requisição
+$resultado = curl_exec($pd);
+
+//Fechar conexão do curl
+curl_close($pd);
 
 } else {
     //Mensagem de Erro
