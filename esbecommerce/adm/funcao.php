@@ -3,7 +3,7 @@
 function statusPagamento($id_referencia) {
 
 //conexão com banco de dados
-include_once '../conexao.php';
+include '../conexao.php';
 
 //iniciar Curl
 $pd = curl_init();
