@@ -1,8 +1,8 @@
 <?php 
 
-function statusPagamento() {
+function statusPagamento($id_referencia) {
 
-echo "deu certo boy <br>";
+echo "id de referencia: $id_referencia <br>";
 
 }
 
