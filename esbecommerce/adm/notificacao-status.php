@@ -45,7 +45,33 @@ curl_close($pd);
 $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
-var_dump($dados_resultado);
+//var_dump($dados_resultado);
+
+//Salvar no Arquivo "notificacao.txt" durante implementação
+//file_put_contents('notificacao.txt', $resultado, FILE_APPEND);
+
+$query_status_pagamento = "SELECT id sts_id FROM status_pagamento WHERE status = '" . $dados_resultado->status . "' LIMIT 1";
+$resultado_status = $conn->prepare($query_status_pagamento);
+$resultado_status->execute();
+
+if ($resultado_status->rowCount() != 0) { 
+
+    $row_status_pagamento = $resultado_status->fetch(PDO::FETCH_ASSOC); 
+    extract($row_status_pagamento);
+    //var_dump($status_id);
+
+    //Cadastrar Status da Transação
+  if ((isset($dados_resultado->authorizationId)) AND (!empty($dados_resultado->authorizationId) )) {
+    $query_transacao = "INSERT INTO transacao_status (authorization_id, status_pagamentos_id, cliente_pagamento_id, created) VALUES ('".$dados_resultado->authorizationId."', $sts_id, ".$conteudo_req->referenceId.", NOW() ) ";
+    $add_transacao = $conn->prepare($query_transacao);
+    $add_transacao->execute();
+  } else {
+    $query_transacao = "INSERT INTO transacao_status (status_pagamentos_id, cliente_pagamento_id, created) VALUES ($sts_id, ".$conteudo_req->referenceId.", NOW() ) ";
+    $add_transacao = $conn->prepare($query_transacao);
+    $add_transacao->execute();
+  }
+
+}
   
     } else {
         echo "Erro: Token Recebido é Inválido <br>";
