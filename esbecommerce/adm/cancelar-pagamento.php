@@ -4,7 +4,6 @@ ob_start();
 
 include_once '../token.php';
 
-include_once '../conexao.php';
 
 $id_referencia = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
