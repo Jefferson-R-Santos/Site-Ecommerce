@@ -12,7 +12,11 @@ var_dump($resultado_cabecalho);
 
 if ((isset($resultado_cabecalho['x-seller-token'])) AND !empty($resultado_cabecalho['x-seller-token'])) {
     if ($resultado_cabecalho['x-seller-token'] == XSELLERTOKEN) {
-        echo "Token Recebido é Válido <br>";
+
+    //Obter Dados da Requisição
+    $conteudo_req = json_decode( file_get_contents("php://input"));
+    var_dump($conteudo_req);
+  
     } else {
         echo "Erro: Token Recebido é Inválido <br>";
     }
