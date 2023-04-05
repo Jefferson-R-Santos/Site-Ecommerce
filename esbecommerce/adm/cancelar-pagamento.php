@@ -5,7 +5,10 @@ ob_start();
 $id_referencia = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if (!empty($id_referencia)) {
-echo "Id de referencia: $id_referencia <br>";
+include_once './funcao.php';
+
+
+
 } else {
     //Mensagem de Erro
     $_SESSION ['msg'] = "<div class='alert alert-danger' role='alert'>
