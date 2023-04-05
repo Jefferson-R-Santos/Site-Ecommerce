@@ -81,8 +81,8 @@ while ($row_pagamento = $resultado_pagamentos->fetch(PDO::FETCH_ASSOC)) {
     echo "<td class= 'text-center'><span class='badge badge-pill badge-$cor'>$nome_sts</span>
     </td>";
     echo "<td class= 'text-center'>";
-    echo "<a href = 'statuspagamento.php?id=$id' class= 'btn btn-outline-success'>Status<a/>  ";
-    echo "<a href = 'cancelar-pagamento.php?id=$id' class= 'btn btn-outline-danger'>  Cancelar<a/>";
+    echo "<a href = 'statuspagamento.php?id=$id' class= 'btn btn-outline-success'>Status<a/>    ";
+    echo "<a href = 'cancelar-pagamento.php?id=$id' class= 'btn btn-outline-danger'>Cancelar<a/>";
     echo "</td>";
     echo "</tr>";
 }
