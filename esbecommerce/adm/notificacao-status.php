@@ -15,7 +15,7 @@ if ((isset($resultado_cabecalho['x-seller-token'])) AND !empty($resultado_cabeca
 
     //Obter Dados da Requisição
     $conteudo_req = json_decode( file_get_contents("php://input"));
-    var_dump($conteudo_req->referenceId);
+    var_dump($conteudo_req);
     //iniciar Curl
 $pd = curl_init();
 
@@ -23,6 +23,29 @@ $pd = curl_init();
 //https://appws.picpay.com/ecommerce/public/payments/{referenceId}/status 
 curl_setopt($pd, CURLOPT_URL, "https://appws.picpay.com/ecommerce/public/payments/".$conteudo_req->referenceId."/status");
 
+//Parametro de resposta da transferencia 
+curl_setopt($pd, CURLOPT_RETURNTRANSFER, true);
+
+//Enviar o parametro referente ao SSL
+curl_setopt($pd, CURLOPT_SSL_VERIFYPEER, false);
+
+// Enviar headers
+$headers = [];
+$headers [] = 'Content-Type: application/json';
+$headers [] = 'x-picpay-token:'. PICPAYTOKEN;
+curl_setopt($pd, CURLOPT_HTTPHEADER, $headers);
+
+//Realizar Requisição
+$resultado = curl_exec($pd);
+
+//Fechar conexão do curl
+curl_close($pd);
+
+//Ler o Conteudo da resposta
+$dados_resultado = json_decode($resultado);
+
+//Imprimir o conteudo da resposta
+var_dump($dados_resultado);
   
     } else {
         echo "Erro: Token Recebido é Inválido <br>";
