@@ -6,7 +6,7 @@ $id_referencia = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if (!empty($id_referencia)) {
 include_once './funcao.php';
-
+statusPagamento();
 
 
 } else {
