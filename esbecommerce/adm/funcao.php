@@ -2,6 +2,8 @@
 
 function statusPagamento($id_referencia) {
 
+
+
 //iniciar Curl
 $pd = curl_init();
 
