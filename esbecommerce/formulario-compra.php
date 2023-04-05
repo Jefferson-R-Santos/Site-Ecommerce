@@ -226,7 +226,7 @@ if (isset($dados_resultado->code) AND $dados_resultado->code !=200) {
        <div class = "form-group col-md-6">
        
        <label for="cpf">CPF</label>
-       <input type="text" name= "cpf" id= "cpf" class= "form-control" placeholder="Somente os numeros do CPF" maxlength="14" oninput="maskCPF(this)" required>
+       <input type="text" name= "cpf" id= "cpf" class= "form-control" placeholder="Somente os numeros do CPF" maxlength="14" oninput="maskCPF(this)" >
 
        </div>
        <div class = "col-md-6">
