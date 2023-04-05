@@ -32,7 +32,9 @@ curl_close($pd);
 $dados_resultado = json_decode($resultado);
 
 //Imprimir o conteudo da resposta
-var_dump($dados_resultado);
+//var_dump($dados_resultado);
+
+return $dados_resultado ;
 
 }
 
