@@ -72,7 +72,7 @@ if ($resultado_status->rowCount() != 0) {
   }
 
 //Editar a compra informando o status da compra no PicPay para o Banco de Dados
-$query_up_pagamento =  "UPDATE clientes SET status_pagamento_id = $sts_id , modificação = NOW() WHERE id = $id_referencia LIMIT 1 ";
+$query_up_pagamento =  "UPDATE clientes SET status_pagamento_id = $sts_id , modificação = NOW() WHERE id = ".$conteudo_req->referenceId." LIMIT 1 ";
 $up_status_picpay = $conn->prepare($query_up_pagamento);
 $up_status_picpay->execute();
 
