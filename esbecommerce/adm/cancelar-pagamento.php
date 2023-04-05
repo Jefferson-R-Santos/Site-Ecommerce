@@ -13,7 +13,7 @@ include_once './funcao.php';
 //Verificar o Status do Pagamento, Salvar no Banco de Dados e recuperar o authorizationId antes do cancelamento da compra
 $dados_resultado = statusPagamento($id_referencia);
 
-var_dump($dados_resultado);
+//var_dump($dados_resultado);
 
  //iniciar Curl
  $pd = curl_init();
