@@ -56,11 +56,11 @@ $result_usuario->execute();
 
 if ($result_usuario->rowCount() != 0) {
   $msg = "<div class= 'alert alert-success' role='alert'> E-mail Encontrado!</div>";}
-} else {
+ else {
   $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";
 }
 }
-
+}
 ?>
 
 <main class="form-signin w-100 m-auto">
