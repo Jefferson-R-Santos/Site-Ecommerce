@@ -44,7 +44,7 @@ if (isset($dadoslogin['btnlogin'])) {
             elseif (!filter_var($dadoslogin['email'], FILTER_VALIDATE_EMAIL)) {
                 $empty_input = true;
                 $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
-            }
+            } 
 //Acessa o if quando não a erro em nenhum campo do formulario
 if (!$empty_input) {
  
@@ -61,13 +61,15 @@ if ($result_usuario->rowCount() != 0) {
 
   //Verificar Senha
   if (password_verify($dadoslogin['senha'], $row_usuario['senha'])) {
-    $msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  }
-} else {
-  $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";}
+    $msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  
+  } else {
+    $msg = "<div class= 'alert alert-danger' role='alert'> Usuario ou Senha Não Encontrada!</div>";
+  } else {
+    $msg = "<div class= 'alert alert-danger' role='alert'> Usuario ou Senha Não Encontrada!</div>";  }
+
+} } }
 
 
-}
-}
 ?>
 
 <main class="form-signin w-100 m-auto">
