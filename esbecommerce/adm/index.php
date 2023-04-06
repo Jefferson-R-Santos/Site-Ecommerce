@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 include_once '../conexao.php';
 
 ?>
@@ -49,7 +51,7 @@ if (isset($dadoslogin['btnlogin'])) {
 if (!$empty_input) {
  
 //Pesquisar usuario no Banco de dados
-$query_usuario = "SELECT id, nome, senha FROM  usuarios WHERE email=:email LIMIT 1";
+$query_usuario = "SELECT id, nome, email, senha FROM  usuarios WHERE email=:email LIMIT 1";
 $result_usuario = $conn->prepare($query_usuario);
 $result_usuario->bindParam(':email', $dadoslogin['email']);
 $result_usuario->execute();
@@ -61,7 +63,14 @@ if ($result_usuario->rowCount() != 0) {
 
   //Verificar Senha
   if (password_verify($dadoslogin['senha'] , $row_usuario['senha'])) {
-    $msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  
+    //$msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  
+
+    $_SESSION ['usuario_id'] = $row_usuario ['id'];
+    $_SESSION ['usuario_nome'] = $row_usuario ['nome'];
+    $_SESSION ['usuario_email'] = $row_usuario ['email'];
+    $_SESSION ['usuario_chave'] = password_hash($row_usuario ['id'], PASSWORD_DEFAULT);
+    header("Location: lista-pagamentos.php");
+
   }else {
     $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuario ou Senha Invalido!</div>";  
   }
