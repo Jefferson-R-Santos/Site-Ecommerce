@@ -65,9 +65,7 @@ if ($result_usuario->rowCount() != 0) {
 } else {
   $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";}
 
-else {
-  $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";
-}
+
 }
 }
 ?>
