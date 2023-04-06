@@ -12,5 +12,6 @@
                 </li>
             </ul>
         </div>
+        <a href="#" class="btn btn-outline-success" >Sair</a>
     </div>
 </nav>
