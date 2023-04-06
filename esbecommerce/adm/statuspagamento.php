@@ -4,6 +4,8 @@ session_start();
 
 ob_start();
 
+include_once './validarlogin.php';
+
 include_once '../token.php';
 
 include_once '../conexao.php';

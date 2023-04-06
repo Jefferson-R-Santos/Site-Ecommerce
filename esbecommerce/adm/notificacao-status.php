@@ -80,10 +80,10 @@ $up_status_picpay->execute();
 }
   
     } else {
-        echo "Erro: Token Recebido é Inválido <br>";
+      die("Erro: Pagina Não Encontrada!<br>");
     }
 } else {
-    echo "Erro: Token Não Recebido <br>";
+    die("Erro: Pagina Não Encontrada!<br>");
 }
 
 ?>
