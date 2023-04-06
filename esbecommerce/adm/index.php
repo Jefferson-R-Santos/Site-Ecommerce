@@ -27,7 +27,7 @@ $msg = "";
 if (isset($dadoslogin['btnlogin'])) {
     $empty_input = false;
             $dadoslogin= array_map('trim', $dadoslogin);
-            if (in_array("", $cliented)) {
+            if (in_array("", $dadoslogin)) {
                 //Só é Necessario cso queira tirar o comando required do input
             $empty_input = true;
             $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario preencher todos os campos!</div>";
