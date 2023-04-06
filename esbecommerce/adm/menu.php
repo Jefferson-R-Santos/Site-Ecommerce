@@ -12,6 +12,6 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="btn btn-danger" >Sair</a>
+        <a href="sairlogin.php" class="btn btn-danger" >Sair</a>
     </div>
 </nav>
