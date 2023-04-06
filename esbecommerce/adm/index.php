@@ -18,7 +18,9 @@
 <?php 
 
 $dadoslogin= filter_input_array(INPUT_POST, FILTER_DEFAULT);
-var_dump($dadoslogin);
+
+if (isset($dadoslogin['btnlogin'])) {
+    var_dump($dadoslogin);}
 
 ?>
 
