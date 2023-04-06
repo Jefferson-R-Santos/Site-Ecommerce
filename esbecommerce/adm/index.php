@@ -2,6 +2,8 @@
 
 session_start();
 
+define('ACESSO', true);
+
 include_once '../conexao.php';
 
 ?>

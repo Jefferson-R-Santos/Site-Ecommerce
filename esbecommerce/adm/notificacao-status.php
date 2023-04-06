@@ -1,6 +1,9 @@
 <?php 
 
+define('ACESSO', true);
+
 include_once '../token.php';
+
 include_once '../conexao.php';
 
 //Receber Cabeçalho 

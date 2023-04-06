@@ -2,6 +2,8 @@
 session_start();
 ob_start();
 
+define('ACESSO', true);
+
 include_once './validarlogin.php';
 
 include_once '../token.php';
