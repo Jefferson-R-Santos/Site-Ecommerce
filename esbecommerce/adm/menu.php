@@ -1,7 +1,7 @@
 <?php 
 
 if (!defined('ACESSO')) {
-    header("Location: /");
+    header("Location: index.php");
     die("Erro: Pagina Não Encontrada");
 }
 
