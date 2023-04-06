@@ -84,14 +84,14 @@
         z-index: 1500;
       }
     </style>
-    
+
 </head>
 
 <body>
     
 <main class="form-signin w-100 m-auto">
   <form>
-    <img class="text-center mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
+    <img class=" mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 fw-normal">Faça Login para Prosseguir.</h1>
 
     <div class="form-floating">
