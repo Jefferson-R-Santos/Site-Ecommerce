@@ -95,21 +95,14 @@
     <h1 class="h3 mb-3 fw-normal">Admnistrador.</h1>
 
     <div class="form-floating">
-    <label for="floatingInput">Email</label>  
     <input type="email" class="form-control" id="email" name="email" placeholder="nome@example.com">
       
     </div>
     <div class="form-floating">
-    <label for="floatingPassword">Senha</label>  
     <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira sua Senha">
       
     </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Manter-me conectado.
-      </label>
-    </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
     <p class="mt-5 mb-3 text-body-secondary">&copy;2023</p>
   </form>
