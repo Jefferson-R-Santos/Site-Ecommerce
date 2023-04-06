@@ -87,7 +87,7 @@
 
 </head>
 
-<body>
+<body class="text-center">
     
 <main class="form-signin w-100 m-auto">
   <form class="form-signin">
