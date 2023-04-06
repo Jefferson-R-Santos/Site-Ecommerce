@@ -64,12 +64,12 @@ if ($result_usuario->rowCount() != 0) {
     $msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  }
 } else {
   $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";}
- }
+
 else {
   $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";
 }
 }
-
+}
 ?>
 
 <main class="form-signin w-100 m-auto">
