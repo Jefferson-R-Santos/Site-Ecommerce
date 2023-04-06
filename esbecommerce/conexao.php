@@ -1,5 +1,10 @@
 <?php
 
+if (!defined('ACESSO')) {
+    header("Location: index.php");
+    die("Erro: Pagina Não Encontrada");
+}
+
 $host = "localhost";
 $user = "root";
 $pass = "";

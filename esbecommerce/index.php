@@ -1,5 +1,9 @@
 <?php
+
+define('ACESSO', true);
+
 include_once './conexao.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

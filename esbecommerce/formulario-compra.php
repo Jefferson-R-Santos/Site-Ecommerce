@@ -1,6 +1,8 @@
 <?php
 ob_start();
 
+define('ACESSO', true);
+
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 if (empty($id)) {

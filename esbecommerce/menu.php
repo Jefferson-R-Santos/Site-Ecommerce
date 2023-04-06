@@ -1,3 +1,12 @@
+<?php 
+
+if (!defined('ACESSO')) {
+    header("Location: index.php");
+    die("Erro: Pagina Não Encontrada");
+}
+
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container">
         <a class="navbar-brand" href="index.php">Site Ecommerce</a>
