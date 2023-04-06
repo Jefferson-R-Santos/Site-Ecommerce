@@ -16,7 +16,9 @@
 <body>
     
 <?php 
-
+//Criptografar Senha
+$senha_criptografada = password_hash("abdefg", PASSWORD_DEFAULT);
+echo $senha_criptografada;
 //Receber dados do formulario
 $dadoslogin= filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
