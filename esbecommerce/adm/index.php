@@ -17,26 +17,59 @@
     
 <?php 
 
+//Receber dados do formulario
 $dadoslogin= filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
+//Variavel para receber mensagem de Erro ou Sucesso.
+$msg = "";
+
+//Acessar o IF quando o usuario clica no botão
 if (isset($dadoslogin['btnlogin'])) {
-    var_dump($dadoslogin);}
+    $empty_input = false;
+            $cliented= array_map('trim', $cliented);
+            if (in_array("", $cliented)) {
+                //Só é Necessario cso queira tirar o comando required do input
+            $empty_input = true;
+            $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario preencher todos os campos!</div>";
+            } 
+            elseif (!filter_var($cliented['email'], FILTER_VALIDATE_EMAIL)) {
+                $empty_input = true;
+                $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
+            }
+//Acessa o if quando não a erro em nenhum campo do formulario
+if (!$empty_input) {
+ 
+$msg = "";
+
+}
+}
 
 ?>
 
 <main class="form-signin w-100 m-auto">
   <form method="POST" action="" class="form-signin">
-  <div class="text-center">
+  <div class="text-center mb-4">
     <img class=" text-lg-center mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
     </div>
     <h1 class="h3 mb-3 fw-normal text-center">Admnistrador.</h1>
 
+    <?php 
+    
+    if (!empty($msg)) {
+
+     echo $msg;
+     $msg = "";
+
+    }
+    
+    ?>
+
     <div class="form-floating">
-    <input type="email" class="form-control" name="lemail" id="email" placeholder="E-mail">
+    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail"  autofocus>
       
     </div>
     <div class="form-floating">
-    <input type="password" class="form-control" name="senha" id="senha" placeholder="Insira sua Senha">
+    <input type="password" class="form-control" name="senha" id="senha" placeholder="Insira sua Senha" >
       
     </div>
 
