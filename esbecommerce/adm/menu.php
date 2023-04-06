@@ -12,6 +12,6 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="btn btn-outline-success" >Sair</a>
+        <a href="#" class="btn btn-danger" >Sair</a>
     </div>
 </nav>
