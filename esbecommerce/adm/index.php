@@ -91,7 +91,7 @@
     
 <main class="form-signin w-100 m-auto">
   <form>
-    <img class=" text-center mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
+    <img class=" text-lg-center mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 fw-normal text-center">Admnistrador.</h1>
 
     <div class="form-floating">
