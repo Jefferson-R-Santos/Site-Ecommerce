@@ -15,15 +15,22 @@
 
 <body>
     
+<?php 
+
+$dadoslogin= filter_input_array(INPUT_POST, FILTER_DEFAULT);
+var_dump($dadoslogin);
+
+?>
+
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form method="POST" action="" class="form-signin">
   <div class="text-center">
     <img class=" text-lg-center mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
     </div>
     <h1 class="h3 mb-3 fw-normal text-center">Admnistrador.</h1>
 
     <div class="form-floating">
-    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+    <input type="email" class="form-control" name="lemail" id="email" placeholder="E-mail">
       
     </div>
     <div class="form-floating">
@@ -31,7 +38,7 @@
       
     </div>
 
-    <button class="w-100 btn btn-lg btn-success" type="submit">Entrar</button>
+    <button class="w-100 btn btn-lg btn-success" type="submit" name="btnlogin" value="btnlogin" >Entrar</button>
 
   </form>
 </main>
