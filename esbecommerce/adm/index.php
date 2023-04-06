@@ -55,12 +55,21 @@ $result_usuario->bindParam(':email', $dadoslogin['email']);
 $result_usuario->execute();
 
 if ($result_usuario->rowCount() != 0) {
-  $msg = "<div class= 'alert alert-success' role='alert'> E-mail Encontrado!</div>";}
- else {
+  //$msg = "<div class= 'alert alert-success' role='alert'> E-mail Encontrado!</div>";
+
+  $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
+
+  //Verificar Senha
+  if (password_verify($dadoslogin['senha'], $row_usuario['senha'])) {
+    $msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  }
+} else {
+  $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";}
+ }
+else {
   $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";
 }
 }
-}
+
 ?>
 
 <main class="form-signin w-100 m-auto">
@@ -82,7 +91,7 @@ if ($result_usuario->rowCount() != 0) {
     ?>
 
     <div class="form-floating">
-    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" value=" <?php  if (isset($dadoslogin['email'])) { echo $dadoslogin['email']; } ?>" required autofocus>
+    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" value="<?php  if (isset($dadoslogin['email'])) { echo $dadoslogin['email']; } ?>" required autofocus>
       
     </div>
     <div class="form-floating">
