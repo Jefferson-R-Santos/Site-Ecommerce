@@ -60,13 +60,17 @@ if ($result_usuario->rowCount() != 0) {
   $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
 
   //Verificar Senha
-  if (password_verify($dadoslogin['senha'], $row_usuario['senha'])) {
+  if (password_verify($dadoslogin['senha'] , $row_usuario['senha'])) {
     $msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  
-  } else {
-    $msg = "<div class= 'alert alert-danger' role='alert'> Usuario ou Senha Não Encontrada!</div>";
+  }else {
+    $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuario ou Senha Invalido!</div>";  
   }
-} } } 
 
+}else {
+  $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuario ou Senha Invalido!</div>";  
+}
+}
+}
 
 ?>
 
