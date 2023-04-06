@@ -65,11 +65,11 @@ $msg = "";
     ?>
 
     <div class="form-floating">
-    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail"  autofocus>
+    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" value=" <?php  if (isset($dadoslogin['email'])) { echo $dadoslogin['email']; } ?>" required autofocus>
       
     </div>
     <div class="form-floating">
-    <input type="password" class="form-control" name="senha" id="senha" placeholder="Insira sua Senha" >
+    <input type="password" class="form-control" name="senha" id="senha" placeholder="Insira sua Senha" value=" <?php  if (isset($dadoslogin['senha'])) { echo $dadoslogin['senha']; } ?>" required >
       
     </div>
 
