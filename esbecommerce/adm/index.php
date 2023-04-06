@@ -90,7 +90,7 @@
 <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form class="form-signin">
+  <form>
     <img class=" mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 fw-normal">Admnistrador.</h1>
 
