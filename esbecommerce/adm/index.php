@@ -95,12 +95,14 @@
     <h1 class="h3 mb-3 fw-normal">Admnistrador.</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="email" name="email" placeholder="nome@example.com">
-      <label for="floatingInput">Email</label>
+    <label for="floatingInput">Email</label>  
+    <input type="email" class="form-control" id="email" name="email" placeholder="nome@example.com">
+      
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira sua Senha">
-      <label for="floatingPassword">Senha</label>
+    <label for="floatingPassword">Senha</label>  
+    <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira sua Senha">
+      
     </div>
 
     <div class="checkbox mb-3">
