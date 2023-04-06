@@ -39,7 +39,7 @@ if (isset($dadoslogin['btnlogin'])) {
 //Acessa o if quando não a erro em nenhum campo do formulario
 if (!$empty_input) {
  
-$msg = "";
+$msg = "Usuario Valido";
 
 }
 }
