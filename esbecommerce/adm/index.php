@@ -26,13 +26,13 @@ $msg = "";
 //Acessar o IF quando o usuario clica no botão
 if (isset($dadoslogin['btnlogin'])) {
     $empty_input = false;
-            $cliented= array_map('trim', $cliented);
+            $dadoslogin= array_map('trim', $dadoslogin);
             if (in_array("", $cliented)) {
                 //Só é Necessario cso queira tirar o comando required do input
             $empty_input = true;
             $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario preencher todos os campos!</div>";
             } 
-            elseif (!filter_var($cliented['email'], FILTER_VALIDATE_EMAIL)) {
+            elseif (!filter_var($dadoslogin['email'], FILTER_VALIDATE_EMAIL)) {
                 $empty_input = true;
                 $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Necessario E-mail Valido!</div>";
             }
