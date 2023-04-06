@@ -64,10 +64,8 @@ if ($result_usuario->rowCount() != 0) {
     $msg = "<div class= 'alert alert-success' role='alert'> Senha Encontrada!</div>";  
   } else {
     $msg = "<div class= 'alert alert-danger' role='alert'> Usuario ou Senha Não Encontrada!</div>";
-  } else {
-    $msg = "<div class= 'alert alert-danger' role='alert'> Usuario ou Senha Não Encontrada!</div>";  }
-
-} } }
+  }
+} } } 
 
 
 ?>
