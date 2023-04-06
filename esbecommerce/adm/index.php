@@ -17,7 +17,7 @@
     
 <main class="form-signin w-100 m-auto">
   <form>
-  <div class="position-absolute top-50 start-0 translate-middle">
+  <div class="position-absolute top-0 start-50 translate-middle">
     <img class=" text-lg-center mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="72">
     </div>
     <h1 class="h3 mb-3 fw-normal text-center">Admnistrador.</h1>
