@@ -1,3 +1,9 @@
+<?php 
+
+include_once '../conexao.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,8 +23,9 @@
     
 <?php 
 //Criptografar Senha
-$senha_criptografada = password_hash("abdefg", PASSWORD_DEFAULT);
-echo $senha_criptografada;
+//$senha_criptografada = password_hash("abdefg", PASSWORD_DEFAULT);
+//echo $senha_criptografada;
+
 //Receber dados do formulario
 $dadoslogin= filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -41,8 +48,16 @@ if (isset($dadoslogin['btnlogin'])) {
 //Acessa o if quando não a erro em nenhum campo do formulario
 if (!$empty_input) {
  
-$msg = "Usuario Valido";
+//Pesquisar usuario no Banco de dados
+$query_usuario = "SELECT id, nome, senha FROM  usuarios WHERE email=:email LIMIT 1";
+$result_usuario = $conn->prepare($query_usuario);
+$result_usuario->bindParam(':email', $dadoslogin['email']);
+$result_usuario->execute();
 
+if ($result_usuario->rowCount() != 0) {
+  $msg = "<div class= 'alert alert-success' role='alert'> E-mail Encontrado!</div>";}
+} else {
+  $msg = "<div class= 'alert alert-danger' role='alert'>Erro: Usuário ou Senha Incorreto!</div>";
 }
 }
 
