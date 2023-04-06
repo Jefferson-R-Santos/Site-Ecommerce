@@ -86,7 +86,7 @@ if ($result_usuario->rowCount() != 0) {
       
     </div>
     <div class="form-floating">
-    <input type="password" class="form-control" name="senha" id="senha" placeholder="Insira sua Senha" value=" <?php  if (isset($dadoslogin['senha'])) { echo $dadoslogin['senha']; } ?>" required >
+    <input type="password" class="form-control" name="senha" id="senha" placeholder="Insira sua Senha" value="<?php  if (isset($dadoslogin['senha'])) { echo $dadoslogin['senha']; } ?>" required >
       
     </div>
 
