@@ -98,6 +98,10 @@ if ($result_usuario->rowCount() != 0) {
      $msg = "";
 
     }
+    if (isset($_SESSION['msg'])) {
+     echo $_SESSION['msg'];
+     unset($_SESSION['msg']);
+    }
     
     ?>
 
