@@ -16,13 +16,14 @@
 
 <body>
     
-<form class = "form-signin">
+<main class="form-signin w-100 m-auto">
+  <form>
     <img class="mb-4" src="../imagens/logo/Shopping free vector icons designed by Roundicons.png" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Faça Login abaixo para prosseguir.</h1>
+    <h1 class="h3 mb-3 fw-normal">Faça Login para Prosseguir.</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="insira seu Email fulano@example.com">
-      <label for="floatingInput">Email </label>
+      <input type="email" class="form-control" id="floatingInput" placeholder="nome@example.com">
+      <label for="floatingInput">Email</label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="floatingPassword" placeholder="Insira sua Senha">
@@ -31,12 +32,13 @@
 
     <div class="checkbox mb-3">
       <label>
-        <input type="checkbox" value="remember-me"> Manter-se Conectado.
+        <input type="checkbox" value="remember-me"> Manter-me conectado.
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
+    <p class="mt-5 mb-3 text-body-secondary">&copy;2023</p>
   </form>
+</main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
