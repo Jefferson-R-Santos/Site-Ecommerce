@@ -52,7 +52,7 @@ include_once './conexao.php';
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Descrição:</strong><?php echo $descrição ; ?>
+      <p class="text-end"><strong>Descrição:</strong><?php echo $descrição ; ?></p>
       </div>
     </div>
   </div>
