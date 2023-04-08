@@ -75,7 +75,7 @@ include_once './conexao.php';
         <div class= "row">
 
             <div class = "col-md-6">
-             <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>' class= "card-img-top">
+             <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>' class="img-thumbnail" alt="...">
 
             </div>
             <div class = "col-md-6">
