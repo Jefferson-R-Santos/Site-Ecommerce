@@ -83,13 +83,8 @@ include_once './conexao.php';
             <p>De R$ <?php echo number_format($preçoSD, 2, ",", ".");?></p>
             <p>Por R$ <?php echo number_format($preço, 2, ",", ".");?> </p>
             <p><a href ="formulario-compra.php?id=<?php echo $id ; ?>" class = "btn btn-outline-success">Comprar</a></p>
-            </div>
-        </div>
-        <div class = "row">
-        <div class ="col-md-12 mt-5">
-        
-        <!-- Example Code -->
-        <div class="accordion" id="accordionExample">
+
+            <div class="accordion" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><font style="vertical-align: inherit;">
@@ -102,6 +97,14 @@ include_once './conexao.php';
            </font></div>
         </div>
       </div>
+
+            </div>
+        </div>
+        <div class = "row">
+        <div class ="col-md-12 mt-5">
+        
+        <!-- Example Code -->
+        
     
 
 
