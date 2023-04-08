@@ -92,7 +92,7 @@ include_once './conexao.php';
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" style="">
           <div class="accordion-body">
-            <strong><font style="vertical-align: inherit;"> <?php echo $nome; ?> </font></strong><font style="vertical-align: inherit;"> <?php echo $descrição ; ?> </font><font style="vertical-align: inherit;">
+            <strong><font style="vertical-align: inherit;"> <?php echo $nome; ?>: </font></strong><font style="vertical-align: inherit;"> <?php echo $descrição ; ?> </font><font style="vertical-align: inherit;">
            </font></div>
         </div>
       </div>
