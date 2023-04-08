@@ -117,13 +117,13 @@ include_once './conexao.php';
         <div class="main">
       <button class="open-modal">Descrição:</button>
       <div class="content">
-      <?php echo $descrição ; ?> <!-- Conteúdo da página principal aqui -->
+       <!-- Conteúdo da página principal aqui -->
       </div>
     </div>
 
     <!-- div que contém o modal -->
     <div class="modal">
-      <span class="close">&times;</span>
+      <span class="close"><?php echo $descrição ; ?></span>
       <div class="modal-content">
        Fechar <!-- Conteúdo do modal aqui -->
       </div>
