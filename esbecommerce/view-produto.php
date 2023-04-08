@@ -22,7 +22,7 @@ include_once './conexao.php';
         <style>
 
 .accordion {
-  max-width: 500px; /* Largura máxima do acordeão */
+  max-width: 300px; /* Largura máxima do acordeão */
   margin: 0; /* Remove as margens padrão */
   float: right; /* Alinha o acordeão à esquerda */
 }
