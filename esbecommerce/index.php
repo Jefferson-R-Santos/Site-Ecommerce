@@ -39,7 +39,7 @@ include_once './conexao.php';
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $nome; ?></h5>
                                 <p class="card-text">R$ <?php echo number_format($preço, 2, ",", "."); ?></p>
-                                <a href="view-produto.php?id=<?php echo $id; ?>" class="btn btn-primary">Detalhes</a>
+                                <a href="view-produto.php?id=<?php echo $id; ?>" class="btn btn-success">Detalhes</a>
                             </div>
                         </div>
                     </div>
