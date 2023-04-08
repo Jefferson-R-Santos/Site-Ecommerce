@@ -45,29 +45,8 @@ include_once './conexao.php';
         <div class = "row">
         <div class ="col-md-12 mt-5">
         
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Descrição
-</button>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Descrição:</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Descrição:</button>
-      </div>
-      <div class="modal-body">
-      <?php echo $descrição ; ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <?php echo $descrição ; ?>
 
-         
-         
         </div>
         </div>
         </div>
