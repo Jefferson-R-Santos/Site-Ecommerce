@@ -44,18 +44,8 @@ include_once './conexao.php';
         </div>
         <div class = "row">
         <div class ="col-md-12 mt-5">
-
-               <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-      <p class="text-end"><strong>Descrição:</strong><?php echo $descrição ; ?></p>
-      </div>
-    </div>
-  </div>
+        <?php echo $descrição ; ?>
+     
         </div>
         </div>
         </div>
