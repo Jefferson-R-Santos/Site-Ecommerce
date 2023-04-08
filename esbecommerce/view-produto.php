@@ -24,7 +24,7 @@ include_once './conexao.php';
 .accordion {
   max-width: 500px; /* Largura máxima do acordeão */
   margin: 0; /* Remove as margens padrão */
-  float: left; /* Alinha o acordeão à esquerda */
+  float: right; /* Alinha o acordeão à esquerda */
 }
 
 .accordion-header {
@@ -77,6 +77,7 @@ include_once './conexao.php';
 
             <div class = "col-md-6">
              <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>' class= "card-img-top">
+
             </div>
             <div class = "col-md-6">
             <p>De R$ <?php echo number_format($preçoSD, 2, ",", ".");?></p>
@@ -88,15 +89,6 @@ include_once './conexao.php';
         <div class ="col-md-12 mt-5">
         
         <!-- Example Code -->
-    
-    
-
-
-        </div>
-        </div>
-        </div>
-        </div>
-
         <div class="accordion" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header">
@@ -110,6 +102,14 @@ include_once './conexao.php';
            </font></div>
         </div>
       </div>
+    
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
