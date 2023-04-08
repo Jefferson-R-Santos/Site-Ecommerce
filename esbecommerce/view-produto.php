@@ -115,9 +115,7 @@ include_once './conexao.php';
         
 
         <div class="main">
-      <h1>Exemplo de div com modal à direita</h1>
-      <p>Este é um exemplo de como criar uma div no HTML5 para exibir um modal do lado direito da página.</p>
-      <button class="open-modal">Abrir modal</button>
+      <button class="open-modal">Descrição:</button>
       <div class="content">
         <!-- Conteúdo da página principal aqui -->
       </div>
@@ -141,10 +139,35 @@ include_once './conexao.php';
         </div>
 
         <script>
+      
       // código JavaScript para abrir e fechar o modal
-      const openModalButton = document.querySelector('.open-modal');
-      const modal = document.querySelector('.modal');
-      const modalBackdrop = document.querySelector('.modal-backdrop');
+const openModalButton = document.querySelector('.open-modal');
+const modal = document.querySelector('.modal');
+const modalBackdrop = document.querySelector('.modal-backdrop');
+const closeButton = document.querySelector('.close');
+
+// função para abrir o modal
+function openModal() {
+  modal.style.right = "0";
+  modalBackdrop.style.display = "block";
+}
+
+// função para fechar o modal
+function closeModal() {
+  modal.style.right = "-300px"; // largura da div do modal
+  modalBackdrop.style.display = "none";
+}
+
+// evento de clique no botão que abre o modal
+openModalButton.addEventListener('click', openModal);
+
+// evento de clique no botão que fecha o modal
+closeButton.addEventListener('click', closeModal);
+
+// evento de clique na div escura que cobre a página quando o modal é aberto
+modalBackdrop.addEventListener('click', closeModal);
+
+      
       </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
