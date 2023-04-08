@@ -44,8 +44,11 @@ include_once './conexao.php';
         </div>
         <div class = "row">
         <div class ="col-md-12 mt-5">
-        <?php echo $descrição ; ?>
-     
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  
+         <?php echo $descrição ; ?>
+         
+        </div>
         </div>
         </div>
         </div>
