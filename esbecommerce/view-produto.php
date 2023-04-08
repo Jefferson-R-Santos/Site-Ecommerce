@@ -19,6 +19,44 @@ include_once './conexao.php';
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         <title>Vizualizar Produto Disponivel</title>
 
+        <style>
+
+.accordion {
+  max-width: 500px; /* Largura máxima do acordeão */
+  margin: 0; /* Remove as margens padrão */
+  float: left; /* Alinha o acordeão à esquerda */
+}
+
+.accordion-header {
+  background-color: #f7f7f7; /* Cor de fundo do cabeçalho */
+  padding: 10px; /* Espaçamento interno do cabeçalho */
+  border: 1px solid #e5e5e5; /* Borda do cabeçalho */
+  border-radius: 5px; /* Borda arredondada do cabeçalho */
+  margin-bottom: 10px; /* Espaçamento entre os cabeçalhos */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse sobre o cabeçalho */
+}
+
+.accordion-button {
+  color: #333; /* Cor do texto do botão */
+}
+
+.accordion-button:focus {
+  outline: none; /* Remove o contorno ao clicar no botão */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e5e5e5; /* Cor de fundo do botão quando expandido */
+}
+
+.accordion-body {
+  padding: 10px; /* Espaçamento interno do corpo */
+  border: 1px solid #e5e5e5; /* Borda do corpo */
+  border-top: none; /* Remove a borda superior do primeiro corpo */
+  border-radius: 0 0 5px 5px; /* Borda arredondada na parte inferior do corpo */
+}
+
+        </style>
+
     </head>
     <body>
 
