@@ -54,6 +54,11 @@ include_once './conexao.php';
   border-radius: 0 0 5px 5px; /* Borda arredondada na parte inferior do corpo */
 }
 
+.img-200 {
+  width: 200px;
+  height: 200px;
+}
+
         </style>
 
     </head>
@@ -75,7 +80,7 @@ include_once './conexao.php';
         <div class= "row">
 
             <div class = "col-md-6">
-             <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>' class="img-thumbnail" alt="...">
+             <img src='<?php echo "imagens/disponiveis/$id/$imagem" ?>' class="img-thumbnail img-200" alt="...">
 
             </div>
             <div class = "col-md-6">
