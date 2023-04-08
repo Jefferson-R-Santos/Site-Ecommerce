@@ -14,74 +14,10 @@ include_once './conexao.php';
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="shortcut icon" href="imagens/icon/favicon.ico" >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         <title>Vizualizar Produto Disponivel</title>
-
-        <style>
-      /* estilo para a div */
-      .modal {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 300px;
-        height: 100%;
-        background-color: #f2f2f2;
-        z-index: 1;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-      }
-      
-      /* estilo para o botão de fechar o modal */
-      .close {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 35px;
-        margin-left: 50px;
-      }
-      
-      /* estilo para o conteúdo do modal */
-      .modal-content {
-        padding: 20px;
-      }
-      
-      /* estilo para a div escura que cobre a página quando o modal é aberto */
-      .modal-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.4);
-        z-index: 1;
-        display: none;
-      }
-      
-      /* estilo para a div que contém a página principal */
-      .main {
-        margin-right: 300px; /* largura da div do modal */
-      }
-      
-      /* estilo para o botão que abre o modal */
-      .open-modal {
-        background-color: #4CAF50; /* cor de fundo do botão */
-        color: white; /* cor do texto do botão */
-        padding: 16px 20px; /* espaçamento interno do botão */
-        border: none; /* borda do botão */
-        cursor: pointer; /* cursor ao passar o mouse sobre o botão */
-        font-size: 16px; /* tamanho do texto do botão */
-        position: fixed;
-        top: 50%;
-        right: 0;
-        transform: translate(0, -50%);
-        z-index: 1;
-      }
-      
-      /* estilo para o conteúdo da página principal */
-      .content {
-        padding: 20px;
-      }
-    </style>
 
     </head>
     <body>
@@ -113,62 +49,27 @@ include_once './conexao.php';
         <div class = "row">
         <div class ="col-md-12 mt-5">
         
-
-        <div class="main">
-      <button class="open-modal">Descrição:</button>
-      <div class="content">
-       <!-- Conteúdo da página principal aqui -->
-      </div>
-    </div>
-
-    <!-- div que contém o modal -->
-    <div class="modal">
-      <span class="close"><?php echo $descrição ; ?></span>
-      <div class="modal-content">
-       Fechar <!-- Conteúdo do modal aqui -->
-      </div>
-    </div>
+        <!-- Example Code -->
     
-    <!-- div que cobre a página quando o modal é aberto -->
-    <div class="modal-backdrop"></div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><font style="vertical-align: inherit;">
+            Clique para ver a descrição.
+           </font></button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" style="">
+          <div class="accordion-body">
+            <strong><font style="vertical-align: inherit;">Descrição: </font></strong><font style="vertical-align: inherit;"> <?php echo $descrição ; ?> </font><font style="vertical-align: inherit;">
+           </font></div>
+        </div>
+      </div>
 
 
         </div>
         </div>
         </div>
         </div>
-
-        <script>
-      
-      // código JavaScript para abrir e fechar o modal
-const openModalButton = document.querySelector('.open-modal');
-const modal = document.querySelector('.modal');
-const modalBackdrop = document.querySelector('.modal-backdrop');
-const closeButton = document.querySelector('.close');
-
-// função para abrir o modal
-function openModal() {
-  modal.style.right = "0";
-  modalBackdrop.style.display = "block";
-}
-
-// função para fechar o modal
-function closeModal() {
-  modal.style.right = "-300px"; // largura da div do modal
-  modalBackdrop.style.display = "none";
-}
-
-// evento de clique no botão que abre o modal
-openModalButton.addEventListener('click', openModal);
-
-// evento de clique no botão que fecha o modal
-closeButton.addEventListener('click', closeModal);
-
-// evento de clique na div escura que cobre a página quando o modal é aberto
-modalBackdrop.addEventListener('click', closeModal);
-
-      
-      </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
