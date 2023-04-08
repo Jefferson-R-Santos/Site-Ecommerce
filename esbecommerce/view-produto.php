@@ -87,12 +87,12 @@ include_once './conexao.php';
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><font style="vertical-align: inherit;">
-            Clique para ver a descrição.
+           Descrição:
            </font></button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" style="">
           <div class="accordion-body">
-            <strong><font style="vertical-align: inherit;">Descrição: </font></strong><font style="vertical-align: inherit;"> <?php echo $descrição ; ?> </font><font style="vertical-align: inherit;">
+            <strong><font style="vertical-align: inherit;"> <?php echo $nome; ?> </font></strong><font style="vertical-align: inherit;"> <?php echo $descrição ; ?> </font><font style="vertical-align: inherit;">
            </font></div>
         </div>
       </div>
