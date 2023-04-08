@@ -23,8 +23,7 @@ include_once './conexao.php';
 
 .accordion {
   max-width: 300px; /* Largura máxima do acordeão */
-  margin: 0; /* Remove as margens padrão */
-  float: right; /* Alinha o acordeão à esquerda */
+  margin: 0 auto 0 50px; /* Margens superior e inferior definidas como 0 para centralizar, e margem esquerda definida como 50px para mover para a direita */
 }
 
 .accordion-header {
