@@ -89,7 +89,15 @@ include_once './conexao.php';
         
         <!-- Example Code -->
     
-    <div class="accordion" id="accordionExample">
+    
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="accordion" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><font style="vertical-align: inherit;">
@@ -102,12 +110,6 @@ include_once './conexao.php';
            </font></div>
         </div>
       </div>
-
-
-        </div>
-        </div>
-        </div>
-        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
